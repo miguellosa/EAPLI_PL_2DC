@@ -4,18 +4,21 @@
  */
 package Controllers;
 
+import Model.ExpenseType;
+import Persistence.*;
+
 /**
  *
  * @author Magano
  */
 public class ExpenseTypeController {
-    
+
     public ExpenseTypeController() {
     }
-    
-    public void RegisterExpenseType(){
-        ExpenseType expType = new ExpenseType();
-        ExpenseTypeRepository repo = new ExpenseTypeRepository();
+
+    public void RegisterExpenseType(String desc) {
+        ExpenseType expType = new ExpenseType(desc);
+        IExpenseTypeRepository repo = new ExpenseTypeRepository();
         repo.save(expType);
     }
 }
