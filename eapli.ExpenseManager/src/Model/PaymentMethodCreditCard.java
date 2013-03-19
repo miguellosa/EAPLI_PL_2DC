@@ -10,18 +10,14 @@ package Model;
  * @author Diogo Leite 1100570
  * @author João Machado 1100596
  */
-public class PaymentMethodCreditCard {
+public class PaymentMethodCreditCard extends PaymentMethod {
 
     private int numeroIdentificacao;
     
-    public PaymentMethodCreditCard (int numeroIdentificacao)
+    public PaymentMethodCreditCard (String descricao, int numeroIdentificacao)
     {
+        super(descricao, PaymentType.CreditCard);
         this.numeroIdentificacao = numeroIdentificacao;
-    }
-    
-    public PaymentMethodCreditCard()
-    {
-        
     }
 
     /**
@@ -29,13 +25,6 @@ public class PaymentMethodCreditCard {
      */
     public int getNumeroIdentificacao() {
         return numeroIdentificacao;
-    }
-
-    /**
-     * @param numeroIdentificacao the numeroIdentificacao to set
-     */
-    public void setNumeroIdentificacao(int numeroIdentificacao) {
-        this.numeroIdentificacao = numeroIdentificacao;
     }
     
 }
