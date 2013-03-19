@@ -16,6 +16,12 @@ public class PaymentMethodCheck {
     private int checkNumber;
     
     
+    public PaymentMethodCheck(){
+        checkDate=new DateTime();
+        value=0;
+        int chekNumber=0;
+    }
+    
     public PaymentMethodCheck(DateTime date, double value, int number){
         checkDate=date;
         this.value=value;
