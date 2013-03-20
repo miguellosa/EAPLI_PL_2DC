@@ -13,10 +13,12 @@ package Model;
 public class PaymentMethodDebitCard extends PaymentMethod {
     
     private int cardID;
+    private String bank;
 
-    public PaymentMethodDebitCard(int cardID, String description) {
+    public PaymentMethodDebitCard(int cardID, String description, String bank) {
         super(description, PaymentType.DebitCard);
         this.cardID = cardID;
+        this.bank = bank;
     }
     
     public int getCardID()
@@ -28,8 +30,12 @@ public class PaymentMethodDebitCard extends PaymentMethod {
         this.cardID = cardID;
     }
     
-    
-    
+    /**
+     * @return the bank
+     */
+    public String getBank() {
+        return bank;
+    }
     
 
     @Override
