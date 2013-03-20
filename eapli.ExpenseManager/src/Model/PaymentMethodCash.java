@@ -8,10 +8,11 @@ package Model;
  *
  * @author Luis Mendes
  */
-public class CashMethod extends PaymentMethod {
+public class PaymentMethodCash extends PaymentMethod {
 
-    public CashMethod (String description){
+    public PaymentMethodCash (String description){
         super (description, PaymentType.Cash);
+        
     }
 
 }
