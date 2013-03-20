@@ -23,6 +23,7 @@ class ExpenseRegisterUI {
         double value = Console.readDouble("Amount:");
         BigDecimal amount = new BigDecimal(value);
         
+        
         ExpenseRegisterController controller = new ExpenseRegisterController();
         controller.registerExpense(what, date, amount);
         
