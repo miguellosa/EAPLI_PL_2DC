@@ -10,46 +10,26 @@ import eapli.util.DateTime;
  *
  * @author Vítor
  */
-public class PaymentMethodCheck {
-    private DateTime checkDate;
-    private double value;
+public class PaymentMethodCheck extends PaymentMethod{
     private int checkNumber;
     
     
     public PaymentMethodCheck(){
-        checkDate=new DateTime();
-        value=0;
-        int chekNumber=0;
+        super("",PaymentType.Check);
+        checkNumber=0;
     }
     
-    public PaymentMethodCheck(DateTime date, double value, int number){
-        checkDate=date;
-        this.value=value;
+    public PaymentMethodCheck(String description, int number){
+        super(description, PaymentType.Check);
         checkNumber=number;
     }
-
-    public DateTime getCheckDate() {
-        return checkDate;
-    }
-
-    public void setCheckDate(DateTime checkDate) {
-        this.checkDate = checkDate;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
-    }
-
-    public int getCheckNumber() {
+    
+    public int getCheckNumber(){
         return checkNumber;
     }
-
-    public void setCheckNumber(int checkNumber) {
-        this.checkNumber = checkNumber;
+    
+    public void setCheckNumber(int number){
+        checkNumber=number;
     }
     
 }

@@ -4,6 +4,8 @@
  */
 package Model;
 
+import java.math.BigDecimal;
+
 /**
  * This class allows you to create instances of
  * Credit Cards Payment Methods
@@ -12,19 +14,38 @@ package Model;
  */
 public class PaymentMethodCreditCard extends PaymentMethod {
 
-    private int numeroIdentificacao;
+    private int identificationNumber;
+    private String bank;
+    private BigDecimal plafon;
     
-    public PaymentMethodCreditCard (String descricao, int numeroIdentificacao)
+    public PaymentMethodCreditCard (String description, int identificationNumber, String bank, BigDecimal plafon)
     {
-        super(descricao, PaymentType.CreditCard);
-        this.numeroIdentificacao = numeroIdentificacao;
+        super(description, PaymentType.CreditCard);
+        this.identificationNumber = identificationNumber;
+        this.bank = bank;
+        this.plafon = plafon;
+        
     }
 
     /**
-     * @return the numeroIdentificacao
+     * @return the identificationNumber
      */
     public int getNumeroIdentificacao() {
-        return numeroIdentificacao;
+        return identificationNumber;
+    }
+
+    /**
+     * @return the bank
+     */
+    public String getBank() {
+        return bank;
+    }
+
+    /**
+     * @return the plafon
+     */
+    public BigDecimal getPlafon() {
+        return plafon;
     }
     
 }
