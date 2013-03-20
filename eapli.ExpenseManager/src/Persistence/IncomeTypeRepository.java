@@ -17,13 +17,18 @@ public class IncomeTypeRepository implements IIncomeTypeRepository
     
     private static List<IncomeType> listIncomeType = new ArrayList<IncomeType>();
 
+
     public IncomeTypeRepository(){
     }
 
     public void save(IncomeType incomeType){
 
             if(incomeType==null) throw new IllegalArgumentException();
-            listIncomeType.add(incomeType);
+            getListIncomeType().add(incomeType);
 
+    }
+    
+    public static List<IncomeType> getListIncomeType() {
+        return listIncomeType;
     }
 }
