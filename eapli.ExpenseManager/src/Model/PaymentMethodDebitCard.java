@@ -19,6 +19,7 @@ public class PaymentMethodDebitCard extends PaymentMethod {
         super(description, PaymentType.DebitCard);
         this.cardID = cardID;
         this.bank = bank;
+        
     }
     
     public int getCardID()
