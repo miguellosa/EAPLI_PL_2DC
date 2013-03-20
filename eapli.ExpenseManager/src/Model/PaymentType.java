@@ -30,4 +30,6 @@ public class PaymentType {
         this.type = type;
     }
     
+   
+    
 }

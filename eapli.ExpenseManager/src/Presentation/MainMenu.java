@@ -24,6 +24,7 @@ public class MainMenu {
             System.out.println("4. Display expenses");
             System.out.println("5. Import/Export data");
             System.out.println("6. Configurations");
+
             System.out.println("0. Exit\n\n");
             option = Console.readInteger("Please choose a option");
             
@@ -37,8 +38,8 @@ public class MainMenu {
                     break;
                 case 2:
                     /* replace the following code for appropriate function once it's implemented */
-                    UnavailableFunctionUI un1 = new UnavailableFunctionUI();
-                    un1.mainLoop();
+                    PaymentMethodRegisterUI pmrUI = new PaymentMethodRegisterUI();
+                    pmrUI.mainLoop();
                     break;
                 case 3:
                     /* replace the following code for appropriate function once it's implemented */
