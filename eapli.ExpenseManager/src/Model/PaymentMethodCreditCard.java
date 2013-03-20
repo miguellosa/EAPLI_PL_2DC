@@ -12,19 +12,19 @@ package Model;
  */
 public class PaymentMethodCreditCard extends PaymentMethod {
 
-    private int numeroIdentificacao;
+    private int identificationNumber;
     
-    public PaymentMethodCreditCard (String descricao, int numeroIdentificacao)
+    public PaymentMethodCreditCard (String descricao, int identificationNumber)
     {
         super(descricao, PaymentType.CreditCard);
-        this.numeroIdentificacao = numeroIdentificacao;
+        this.identificationNumber = identificationNumber;
     }
 
     /**
-     * @return the numeroIdentificacao
+     * @return the identificationNumber
      */
     public int getNumeroIdentificacao() {
-        return numeroIdentificacao;
+        return identificationNumber;
     }
     
 }
