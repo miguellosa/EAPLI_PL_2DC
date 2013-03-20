@@ -20,14 +20,12 @@ public class Expense {
    
     BigDecimal amount;
     
-    PaymentMethod payMethod;
-    
     ExpenseType expType;
     
     protected Expense() {}
     
-    public Expense( String description, Date dateOccurred, BigDecimal amount, PaymentMethod payMethod, ExpenseType expType) {
-        if (description == null || dateOccurred == null || amount == null || payMethod == null || expType == null) {
+    public Expense( String description, Date dateOccurred, BigDecimal amount) {
+        if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
         // cannot record a negative expense or a zero EUR expense
@@ -38,8 +36,8 @@ public class Expense {
         this.amount = amount;
     }
     
-    public Expense( String description, int year, int month, int day, BigDecimal amount, PaymentMethod payMethod, ExpenseType expType) {
-        this( description, DateTime.newDate(year, month, day), amount, payMethod, expType);
+    public Expense( String description, int year, int month, int day, BigDecimal amount) {
+        this( description, DateTime.newDate(year, month, day), amount);
     }
     
     public BigDecimal getAmount() {
