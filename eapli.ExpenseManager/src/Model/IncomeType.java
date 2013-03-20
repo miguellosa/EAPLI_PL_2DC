@@ -14,5 +14,15 @@ public class IncomeType {
     public IncomeType(String d) {
             description = d;
     }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
 }
 
