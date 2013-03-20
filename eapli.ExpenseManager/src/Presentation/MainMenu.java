@@ -20,7 +20,7 @@ public class MainMenu {
             System.out.println("===================\n");
             System.out.println("1. Register an expense");
             System.out.println("2. Define expense type");
-            System.out.println("3. Define payment");
+            System.out.println("3. Define payment method");
             System.out.println("4. Register income");
             System.out.println("5. Display expenses");
             System.out.println("6. Import/Export data");
@@ -40,8 +40,8 @@ public class MainMenu {
                     break;
                 case 3:
                     /* replace the following code for appropriate function once it's implemented */
-                    UnavailableFunctionUI un1 = new UnavailableFunctionUI();
-                    un1.mainLoop();
+                    PaymentMethodRegisterUI pmrUI = new PaymentMethodRegisterUI();
+                    pmrUI.mainLoop();
                     break;
                 case 4:
                     /* replace the following code for appropriate function once it's implemented */
