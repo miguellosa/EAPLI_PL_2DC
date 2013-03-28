@@ -18,7 +18,7 @@ public class ConfigurationsUI {
             System.out.println("  Configurations  ");
             System.out.println("======================\n");
             System.out.println("1. Define Expense type");
-            System.out.println("2. Configure Alerts");
+            System.out.println("2. Define Income Type");
             System.out.println("3. ");
             System.out.println("4. ");
             System.out.println("0. Go back\n\n");
@@ -29,9 +29,8 @@ public class ConfigurationsUI {
                     type.mainLoop();
                     break;
                 case 2:
-                    /* replace the following code for appropriate function once it's implemented */
-                    UnavailableFunctionUI un1 = new UnavailableFunctionUI();
-                    un1.mainLoop();
+                    IncomeTypeUI incType = new IncomeTypeUI();
+                    incType.mainLoop();
                     break;
                 case 3:
                     /* replace the following code for appropriate function once it's implemented */
