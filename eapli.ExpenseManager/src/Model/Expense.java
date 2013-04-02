@@ -15,6 +15,8 @@ public class Expense {
     private ExpenseType exptype;
     
     
+    PaymentMethod payMeth;
+    
     protected Expense() {}
     
     public Expense( String description, Date dateOccurred, BigDecimal amount,ExpenseType type) {

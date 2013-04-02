@@ -47,11 +47,11 @@ public class DisplayExpensesUI {
     public void showMonthlyExpenses(int mes){
        IExpenseTypeRepository typerepo=new ExpenseTypeRepository();
        IExpenseRepository repo=new ExpenseRepository();
-        System.out.println("mes"+mes);
+        System.out.println("mes "+mes);
         for (int i = 0; i < typerepo.getTypeRep().size(); i++) { //lista de tipos
-            // System.out.println("mes"+mes);
+             System.out.println("mes1111 "+mes);
             for (int j = 0; j <repo.getAllExpenses().size(); j++) { //lista de expenses
-                // System.out.println("mes123"+mes);
+                 System.out.println("mes123"+mes);
                  System.out.println("mes123 "+repo.getAllExpenses().get(j).getExpenseMonth());
                 if(mes==repo.getAllExpenses().get(j).getExpenseMonth()){ 
                      System.out.println("tipo1 "+typerepo.getTypeRep().get(i).getDescription());
