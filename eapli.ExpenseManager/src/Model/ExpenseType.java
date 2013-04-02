@@ -1,10 +1,13 @@
 
 package Model;
 
-
+/**
+ *
+ * @author i110557
+ */
 public class ExpenseType {
     
-    String description;
+    private String description;
     
     protected ExpenseType() {}
     
@@ -15,4 +18,9 @@ public class ExpenseType {
         }    
         this.description=description;
     }
+
+    public String getDescription() {
+        return description;
+    }
+    
 }
