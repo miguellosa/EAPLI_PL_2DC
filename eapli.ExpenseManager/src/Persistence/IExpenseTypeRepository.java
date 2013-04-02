@@ -5,6 +5,7 @@
 package Persistence;
 
 import Model.ExpenseType;
+import java.util.List;
 
 /**
  *
@@ -12,5 +13,5 @@ import Model.ExpenseType;
  */
 public interface IExpenseTypeRepository {
      void save(ExpenseType type);
-  //  List<Expense> getAllExpenses();
+     List<ExpenseType> getTypeRep();
 }

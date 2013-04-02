@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author i100447
+ * @author i110557
  */
 public class ExpenseTypeRepository implements IExpenseTypeRepository{
     
@@ -23,7 +23,11 @@ public class ExpenseTypeRepository implements IExpenseTypeRepository{
         if (type==null)
         {
             throw new IllegalArgumentException();
-        }
+        } 
         listExpenseType.add(type);
+    }
+    public List<ExpenseType> getTypeRep(){
+        return listExpenseType;
+       
     }
 }

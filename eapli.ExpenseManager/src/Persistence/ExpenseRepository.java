@@ -24,4 +24,7 @@ public class ExpenseRepository  implements IExpenseRepository
         listExpense.add(exp);
       
     }
+    public List<Expense> getAllExpenses(){
+        return listExpense;
+    }
 }

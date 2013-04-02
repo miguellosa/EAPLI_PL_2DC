@@ -1,5 +1,9 @@
 package Presentation;
 
+import Persistence.ExpenseRepository;
+import Persistence.ExpenseTypeRepository;
+import Persistence.IExpenseRepository;
+import Persistence.IExpenseTypeRepository;
 import eapli.util.Console;
 
 /**
@@ -8,7 +12,7 @@ import eapli.util.Console;
  */
 public class DisplayExpensesUI {
     public void mainLoop(){
-        int option;
+        int option,option1;
         do{
             System.out.println("===================");
             System.out.println("  Display Expenses  ");
@@ -20,8 +24,11 @@ public class DisplayExpensesUI {
             switch(option){
                 case 1:
                     /* replace the following code for appropriate function once it's implemented */
-                    UnavailableFunctionUI un1 = new UnavailableFunctionUI();
-                    un1.mainLoop();
+                    //System.out.println("Which month?\n (");
+                    option1 = Console.readInteger("Which Month?\n (0-January until 11-December)");
+                    showMonthlyExpenses(option1);
+                    //UnavailableFunctionUI un1 = new UnavailableFunctionUI();
+                    //un1.mainLoop();
                     break;
                 case 2:
                     /* replace the following code for appropriate function once it's implemented */
@@ -36,4 +43,26 @@ public class DisplayExpensesUI {
             } // end switch
         } while(option != 0);
     }
+    
+    public void showMonthlyExpenses(int mes){
+       IExpenseTypeRepository typerepo=new ExpenseTypeRepository();
+       IExpenseRepository repo=new ExpenseRepository();
+        System.out.println("mes"+mes);
+        for (int i = 0; i < typerepo.getTypeRep().size(); i++) { //lista de tipos
+            // System.out.println("mes"+mes);
+            for (int j = 0; j <repo.getAllExpenses().size(); j++) { //lista de expenses
+                // System.out.println("mes123"+mes);
+                 System.out.println("mes123 "+repo.getAllExpenses().get(j).getExpenseMonth());
+                if(mes==repo.getAllExpenses().get(j).getExpenseMonth()){ 
+                     System.out.println("tipo1 "+typerepo.getTypeRep().get(i).getDescription());
+                      System.out.println("tiii "+repo.getAllExpenses().get(j).getDescription());
+                     if( typerepo.getTypeRep().get(i).getDescription().equals(repo.getAllExpenses().get(j).getExptype().getDescription()))//se for do tipo na pos (i)
+                     {
+                         System.out.println(repo.getAllExpenses().get(i).toString());
+                     }
+                }
+            }
+        }
+    }
+
 }

@@ -7,9 +7,9 @@ import Model.*;
 import java.util.List;
 /**
  *
- * @author losa
+ * @author i110557
  */
 public interface IExpenseRepository {
     void save(Expense exp);
-  //  List<Expense> getAllExpenses();        
+    List<Expense> getAllExpenses();      
 }

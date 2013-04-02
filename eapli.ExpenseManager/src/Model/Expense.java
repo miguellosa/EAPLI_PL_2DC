@@ -7,24 +7,17 @@ package Model;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.Date;
-
-
-/**
- *
- * @author Paulo Gandra Sousa
- */
-
 public class Expense {
     
-    String description;
-   
+    private String description;
+    private Date dateOccurd;
     BigDecimal amount;
+    private ExpenseType exptype;
     
-    ExpenseType expType;
     
     protected Expense() {}
     
-    public Expense( String description, Date dateOccurred, BigDecimal amount) {
+    public Expense( String description, Date dateOccurred, BigDecimal amount,ExpenseType type) {
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -34,15 +27,39 @@ public class Expense {
         }
         this.description = description;
         this.amount = amount;
+        dateOccurd= dateOccurred;
+        exptype=type;
     }
     
-    public Expense( String description, int year, int month, int day, BigDecimal amount) {
-        this( description, DateTime.newDate(year, month, day), amount);
+    public Expense( String description, int year, int month, int day, BigDecimal amount,ExpenseType type) {
+        this( description, DateTime.newDate(year, month, day), amount,type);
     }
     
     public BigDecimal getAmount() {
         return amount;
     }
 
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @return the month of an expense
+     */
+    public int getExpenseMonth() {
+        return DateTime.Month(DateTime.dateToCalendar(dateOccurd));
+        
+    }
+
+    public String toString(){
+        return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd;
+    }
+
+    public ExpenseType getExptype() {
+        return exptype;
+    }
    
 }
