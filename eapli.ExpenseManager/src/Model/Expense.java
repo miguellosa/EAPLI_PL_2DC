@@ -17,9 +17,15 @@ public class Expense {
     
     PaymentMethod payMeth;
     
+    PaymentMethod payMeth;
+    
     protected Expense() {}
     
+<<<<<<< HEAD
     public Expense( String description, Date dateOccurred, BigDecimal amount,ExpenseType type) {
+=======
+    public Expense( String description, Date dateOccurred, BigDecimal amount, ExpenseType expType, PaymentMethod payMeth) {
+>>>>>>> d2b4b9b413a461303a93edd1b389309909806ebd
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
         }
@@ -33,8 +39,15 @@ public class Expense {
         exptype=type;
     }
     
+<<<<<<< HEAD
     public Expense( String description, int year, int month, int day, BigDecimal amount,ExpenseType type) {
         this( description, DateTime.newDate(year, month, day), amount,type);
+=======
+    public Expense( String description, int year, int month, int day, BigDecimal amount, ExpenseType expType, PaymentMethod payMeth) {
+        this( description, DateTime.newDate(year, month, day), amount,expType, payMeth);
+        this.expType=expType;
+        this.payMeth=payMeth;
+>>>>>>> d2b4b9b413a461303a93edd1b389309909806ebd
     }
     
     public BigDecimal getAmount() {

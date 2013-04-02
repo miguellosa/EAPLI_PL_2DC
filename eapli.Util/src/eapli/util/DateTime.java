@@ -67,6 +67,10 @@ public /* static */ class DateTime {
     public static int currentMonth() {
         return today().get(Calendar.MONTH) + 1 ;
     }
+    //PROPOR metodo
+     public static int Month(Calendar d) { // metodo para retornar o mes de uma data do tipo Calendar
+        return d.get(Calendar.MONTH) + 1 ;
+    }
 
     /**
      * Creates a new Calendar object set to a specific date

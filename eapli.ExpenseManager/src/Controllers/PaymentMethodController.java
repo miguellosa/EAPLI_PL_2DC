@@ -11,6 +11,7 @@ import Persistence.IExpenseTypeRepository;
 import Persistence.IPaymentMethodRepository;
 import Persistence.PaymentMethodRepository;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  *
@@ -44,5 +45,10 @@ public class PaymentMethodController {
         PaymentMethodDebitCard payMethDebitCard = new PaymentMethodDebitCard(num, desc , bank);
         IPaymentMethodRepository repo = new PaymentMethodRepository();
         repo.save(payMethDebitCard);
+    }
+    
+    public List<PaymentMethod> getPaymentMethods(){
+        IPaymentMethodRepository repo = new PaymentMethodRepository();
+        return repo.getPaymentMehtodList();    
     }
 }

@@ -5,6 +5,7 @@
 package Persistence;
 
 import Model.PaymentMethod;
+import java.util.List;
 
 /**
  *
@@ -12,4 +13,5 @@ import Model.PaymentMethod;
  */
 public interface IPaymentMethodRepository {
     void save(PaymentMethod pay);
+    public List<PaymentMethod> getPaymentMehtodList();
 }
