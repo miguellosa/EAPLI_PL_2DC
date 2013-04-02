@@ -44,7 +44,7 @@ public class DisplayExpensesUI {
         } while(option != 0);
     }
     
-    public void showMonthlyExpenses(int mes){
+    public void showMonthlyExpenses(int mes){ //...
        IExpenseTypeRepository typerepo=new ExpenseTypeRepository();
        IExpenseRepository repo=new ExpenseRepository();
         System.out.println("mes "+mes);
