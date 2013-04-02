@@ -23,4 +23,8 @@ public class PaymentMethodRepository implements IPaymentMethodRepository{
         listPaymentMethod.add(pay);
       
     }
+    
+    public List<PaymentMethod> getPaymentMehtodList(){
+        return listPaymentMethod;
+    }
 }
