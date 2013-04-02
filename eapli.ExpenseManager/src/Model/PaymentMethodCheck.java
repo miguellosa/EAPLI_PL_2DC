@@ -9,6 +9,7 @@ import eapli.util.DateTime;
 /**
  *
  * @author Vítor
+ * @author Ricardo
  */
 public class PaymentMethodCheck extends PaymentMethod{
     private int checkNumber;

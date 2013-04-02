@@ -25,7 +25,7 @@ class ExpenseRegisterUI {
         
         
         ExpenseRegisterController controller = new ExpenseRegisterController();
-        controller.registerExpense(what, date, amount);
+        //controller.registerExpense(what, date, amount);
         
         System.out.println("expense recorded.");
     }
