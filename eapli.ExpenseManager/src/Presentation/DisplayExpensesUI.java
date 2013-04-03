@@ -10,13 +10,26 @@ import eapli.util.Console;
  * User interface displaying the available options within "Display Expense"
  * @author João Carreira
  */
-public class DisplayExpensesUI {
+public class DisplayExpensesUI extends BaseUI {
+
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("===================");
+        System.out.println("  Display Expenses  ");
+        System.out.println("===================\n");
+    }
+
+    @Override
     public void mainLoop(){
         int option,option1;
         do{
-            System.out.println("===================");
-            System.out.println("  Display Expenses  ");
-            System.out.println("===================\n");
+            
             System.out.println("1. Monthly expenses");
             System.out.println("2. Weekly expenses");
             System.out.println("0. Go back\n\n");
