@@ -19,6 +19,15 @@ public abstract class PaymentMethod {
         this.paymentType=paymentType;
     }
     
+   public String getPaymentMethodDescription(){
+   
+       return description;
+   }
+   
+   public PaymentType getPaymentMethodPaymentType(){
+   
+       return paymentType;
+   }
     
     
 }
