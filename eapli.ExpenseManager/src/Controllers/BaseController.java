@@ -6,6 +6,7 @@ package Controllers;
 
 import Model.*;
 import Persistence.*;
+import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -33,5 +34,18 @@ public class BaseController {
         
         return sum;
     }
+    
+    
+//    public BigDecimal getWeeklyExpenses()
+//    {
+//        /* saves the number of the current week */
+//        int week = DateTime.weekNumber(DateTime.today());
+//        /* saves the current year */
+//        int year = DateTime.currentYear();
+//        
+//        /* creates new instance of ExpenseRepository and saves the all current week expense in a list */
+//        IExpenseRepository rep = new ExpenseRepository();
+//        
+//    }
     
 }
