@@ -13,17 +13,27 @@ import java.math.BigDecimal;
  *
  * @author Miguel
  */
-public class PaymentMethodRegisterUI {
+public class PaymentMethodRegisterUI extends BaseUI {
 
-    public PaymentMethodRegisterUI() {
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("======================");
+        System.out.println("  Register a payment method  ");
+        System.out.println("======================\n");
     }
 
+    @Override
     public void mainLoop() {
         String desc, bank;
         BigDecimal plafon;
         int num;
         PaymentMethodController controller = new PaymentMethodController();
-        System.out.println("* * *  REGISTER A PAYMENT METHOD  * * *\n");
         System.out.println("Choose a Payment Type:\n1 - Cash\n2 - Check\n3 - Credit Card\n4 - Debit Card\n");
         int op = Console.readInteger("Choose a Payment Type:\n1 - Cash\n2 - Check\n3 - Credit Card\n4 - Debit Card\n->");
         while (op != -1) {
