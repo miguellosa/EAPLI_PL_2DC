@@ -56,6 +56,17 @@ public class Expense {
         return description;
     }
 
+    
+    /**
+     * getExpenseWeek
+     * @return week number (ranging 1-52)
+     */
+    public int getExpenseWeek()
+    {
+        return DateTime.weekNumber(DateTime.dateToCalendar(dateOccurd));
+    }
+    
+    
     /**
      * @return the month of an expense
      */
