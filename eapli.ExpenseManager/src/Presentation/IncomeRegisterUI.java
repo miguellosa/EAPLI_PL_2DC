@@ -1,5 +1,6 @@
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.IncomeRegisterController;
 import Model.IncomeType;
 import Persistence.IncomeTypeRepository;
@@ -8,6 +9,11 @@ import java.util.Date;
 import java.util.List;
 
 public class IncomeRegisterUI extends BaseUI {
+    
+    @Override
+    public BaseController controller(){
+        return null;
+    }
 
     @Override
     public void show() {

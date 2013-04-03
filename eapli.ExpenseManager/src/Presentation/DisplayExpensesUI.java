@@ -1,5 +1,6 @@
 package Presentation;
 
+import Controllers.BaseController;
 import Persistence.ExpenseRepository;
 import Persistence.ExpenseTypeRepository;
 import Persistence.IExpenseRepository;
@@ -11,6 +12,11 @@ import eapli.util.Console;
  * @author João Carreira
  */
 public class DisplayExpensesUI extends BaseUI {
+    
+    @Override
+    public BaseController controller(){
+        return null;
+    }
 
     @Override
     public void show() {

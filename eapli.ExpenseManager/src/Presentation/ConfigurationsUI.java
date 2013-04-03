@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import eapli.util.Console;
 
 /**
@@ -12,6 +13,11 @@ import eapli.util.Console;
  * @author Francisco
  */
 public class ConfigurationsUI extends BaseUI {
+    
+    @Override
+    public BaseController controller(){
+        return null;
+    }
 
     @Override
     public void show() {
