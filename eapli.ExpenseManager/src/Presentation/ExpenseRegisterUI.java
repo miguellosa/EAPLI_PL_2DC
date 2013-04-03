@@ -20,25 +20,32 @@ import java.util.List;
  *
  * @author Paulo Gandra Sousa
  */
-class ExpenseRegisterUI {
+class ExpenseRegisterUI extends BaseUI {
+
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("======================");
+        System.out.println("  Register an expense!  ");
+        System.out.println("======================\n");
+    }
+
+    @Override
     public void mainLoop() {
         
         PaymentMethodController paymentMethod;
         ExpenseTypeController expenseType;
         
-        System.out.println("* * *  REGISTER AN EXPENSE  * * *\n");
-       
-        //Falta listar ou escrever o tipo de despesa
         
         String what = Console.readLine("Description:");
         Date date = Console.readDate("When:");
         double value = Console.readDouble("Amount:");
         BigDecimal amount = new BigDecimal(value);
-
-     //   String type = Console.readLine("Type:");
-        
-
-
         System.out.println("Expense Type: ");
         expenseType = new ExpenseTypeController();
         List<ExpenseType> listExpenseTypePrint= new ArrayList<ExpenseType>();
@@ -56,7 +63,6 @@ class ExpenseRegisterUI {
             System.out.println(i+1 +" - "+ listPaymentMethodToPrint.get(i).getPaymentMethodDescription());
         }
         int selectedMethod = Console.readInteger("Select One:");
-
         
         ExpenseRegisterController controller = new ExpenseRegisterController();
 

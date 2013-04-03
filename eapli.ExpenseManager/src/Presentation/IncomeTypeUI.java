@@ -11,9 +11,23 @@ import eapli.util.Console;
  *
  * @author i090566
  */
-public class IncomeTypeUI {
+public class IncomeTypeUI extends BaseUI {
+
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("======================");
+        System.out.println("  Register an income type  ");
+        System.out.println("======================\n");
+    }
+
+    @Override
     public void mainLoop() {
-        System.out.println("* * *  REGISTER AN INCOME TYPE  * * *\n");
         
         String description  = Console.readLine("Description:");
              

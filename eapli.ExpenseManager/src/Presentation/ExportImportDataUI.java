@@ -6,13 +6,25 @@ import eapli.util.Console;
  * User interface displaying the available options within "ExportImportDataUI"
  * @author João Carreira
  */
-public class ExportImportDataUI {
+public class ExportImportDataUI extends BaseUI {
+
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("======================");
+        System.out.println("  Export/Import Data  ");
+        System.out.println("======================\n");
+    }
+
+    @Override
     public void mainLoop(){
         int option;
         do{
-            System.out.println("======================");
-            System.out.println("  Export/import Data  ");
-            System.out.println("======================\n");
             System.out.println("1. Export to CSV");
             System.out.println("2. Export to XML");
             System.out.println("3. Import from CSV");

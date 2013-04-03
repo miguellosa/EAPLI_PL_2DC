@@ -7,23 +7,37 @@ package Presentation;
 import eapli.util.Console;
 
 /**
- *User interface displaying the available options within "Configurations"
+ * User interface displaying the available options within "Configurations"
+ *
  * @author Francisco
  */
-public class ConfigurationsUI {
-    public void mainLoop(){
+public class ConfigurationsUI extends BaseUI {
+
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("======================");
+        System.out.println("  Configurations  ");
+        System.out.println("======================\n");
+    }
+
+    @Override
+    protected void mainLoop() {
         int option;
-        do{
-            System.out.println("======================");
-            System.out.println("  Configurations  ");
-            System.out.println("======================\n");
+        do {
+
             System.out.println("1. Define Expense type");
             System.out.println("2. Define Income Type");
             System.out.println("3. ");
             System.out.println("4. ");
             System.out.println("0. Go back\n\n");
             option = Console.readInteger("Please choose a option");
-            switch(option){
+            switch (option) {
                 case 1:
                     ExpenseTypeUI type = new ExpenseTypeUI();
                     type.mainLoop();
@@ -48,6 +62,6 @@ public class ConfigurationsUI {
                 default:
                     System.out.println("Unknown option\nPlease try again!");
             } // end switch
-        } while(option != 0);
+        } while (option != 0);
     } // end mainLoop
 }//end class
