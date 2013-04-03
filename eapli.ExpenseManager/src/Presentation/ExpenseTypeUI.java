@@ -11,9 +11,24 @@ import eapli.util.Console;
  *
  * @author Magano
  */
-class ExpenseTypeUI {
+class ExpenseTypeUI extends BaseUI {
+
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("======================");
+        System.out.println("  Register an expense type  ");
+        System.out.println("======================\n");
+    }
+
+    @Override
     public void mainLoop() {
-        System.out.println("* * *  REGISTER AN EXPENSE TYPE  * * *\n");
+        
         
         String desc  = Console.readLine("Description:");
              
