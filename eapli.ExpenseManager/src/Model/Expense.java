@@ -21,11 +21,8 @@ public class Expense {
     protected Expense() {}
     
 
-    public Expense( String description, Date dateOccurred, BigDecimal amount,ExpenseType type) {
-        
-    }
-
-    public Expense( String description, Date dateOccurred, BigDecimal amount, ExpenseType expType, PaymentMethod payMeth) {
+    
+   public Expense( String description, Date dateOccurred, BigDecimal amount, ExpenseType expType, PaymentMethod payMeth) {
 
         if (description == null || dateOccurred == null || amount == null) {
             throw new IllegalArgumentException();
@@ -36,19 +33,15 @@ public class Expense {
         }
         this.description = description;
         this.amount = amount;
-        dateOccurd= dateOccurred;
-        exptype=expType;
+        this.dateOccurd= dateOccurred;
+        this.exptype=expType;
+        this.payMeth=payMeth;
     }
     
 
-    public Expense( String description, int year, int month, int day, BigDecimal amount,ExpenseType type) {
-        this( description, DateTime.newDate(year, month, day), amount,type);
-    }
 
     public Expense( String description, int year, int month, int day, BigDecimal amount, ExpenseType exptype, PaymentMethod payMeth) {
         this( description, DateTime.newDate(year, month, day), amount,exptype, payMeth);
-        this.exptype=exptype;
-        this.payMeth=payMeth;
 
     }
     

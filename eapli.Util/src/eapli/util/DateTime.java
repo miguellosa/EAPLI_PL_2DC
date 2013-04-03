@@ -71,6 +71,11 @@ public /* static */ class DateTime {
      public static int Month(Calendar d) { // metodo para retornar o mes de uma data do tipo Calendar
         return d.get(Calendar.MONTH) + 1 ;
     }
+     
+       public static int Year(Calendar d) { // metodo para retornar o ano de uma data do tipo Calendar
+        return d.get(Calendar.YEAR)+1900;
+    }
+
 
     /**
      * Creates a new Calendar object set to a specific date
