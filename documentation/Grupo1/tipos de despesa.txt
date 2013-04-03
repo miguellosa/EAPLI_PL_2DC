@@ -1,7 +1,0 @@
-Menu->ExpenseTypeUI: Create
-ExpenseTypeUI->ExpenseTypeController: RegisterExpenseType
-ExpenseTypeController->ExpenseType: Create
-ExpenseType->ExpenseTypeController: 
-ExpenseTypeController->ExpenseRepository: CreateRepository
-ExpenseRepository->ExpenseTypeController:
-ExpenseTypeController->ExpenseRepository: save
