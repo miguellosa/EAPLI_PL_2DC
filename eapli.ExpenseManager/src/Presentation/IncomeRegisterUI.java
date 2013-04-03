@@ -7,15 +7,28 @@ import eapli.util.Console;
 import java.util.Date;
 import java.util.List;
 
-public class IncomeRegisterUI {
+public class IncomeRegisterUI extends BaseUI {
 
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("======================");
+        System.out.println("  Register an income  ");
+        System.out.println("======================\n");
+    }
+
+    @Override
     public void mainLoop() {
 
         List<IncomeType> incomeTypeRepo = IncomeTypeRepository.getListIncomeType();
         IncomeRegisterController controller = new IncomeRegisterController();
         int numeroTipo;
 
-        System.out.println("* * *  REGISTER AN INCOME  * * *\n");
 
         String description = Console.readLine("Description:");
         Date date = Console.readDate("When:");
