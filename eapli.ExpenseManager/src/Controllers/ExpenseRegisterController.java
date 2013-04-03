@@ -24,9 +24,6 @@ public class ExpenseRegisterController {
     }
 
 
-    public void registerExpense(String what, Date date, BigDecimal amount,ExpenseType exp) {
-        Expense expense = new Expense( what, date, amount,exp);
-    }
 
     public void registerExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMethod payMeth) {
         Expense expense = new Expense( what, date, amount, expType, payMeth);
