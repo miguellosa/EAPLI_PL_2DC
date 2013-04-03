@@ -10,6 +10,10 @@ package Model;
  */
 public class PaymentMethodCash extends PaymentMethod {
 
+    public PaymentMethodCash (){
+        super ("", PaymentType.Cash);   
+    }
+    
     public PaymentMethodCash (String description){
         super (description, PaymentType.Cash);
         
