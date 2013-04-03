@@ -70,6 +70,10 @@ public class Expense {
         return DateTime.Month(DateTime.dateToCalendar(dateOccurd));
         
     }
+      public int getExpenseYear() {
+        return DateTime.Year(DateTime.dateToCalendar(dateOccurd));
+        
+    }
 
     public String toString(){
         return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd;

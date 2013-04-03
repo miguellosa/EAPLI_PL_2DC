@@ -12,7 +12,7 @@ import eapli.util.Console;
  */
 public class DisplayExpensesUI {
     public void mainLoop(){
-        int option,option1;
+        int option,option1,option2;
         do{
             System.out.println("===================");
             System.out.println("  Display Expenses  ");
@@ -20,15 +20,12 @@ public class DisplayExpensesUI {
             System.out.println("1. Monthly expenses");
             System.out.println("2. Weekly expenses");
             System.out.println("0. Go back\n\n");
-            option = Console.readInteger("Please choose a option");
+            option = Console.readInteger("Please choose an option");
             switch(option){
                 case 1:
-                    /* replace the following code for appropriate function once it's implemented */
-                    //System.out.println("Which month?\n (");
-                    option1 = Console.readInteger("Which Month?\n (0-January until 11-December)");
-                    showMonthlyExpenses(option1);
-                    //UnavailableFunctionUI un1 = new UnavailableFunctionUI();
-                    //un1.mainLoop();
+                    option1 = Console.readInteger("Which Year?");
+                    option2 = Console.readInteger("Which Month?\n (0-January until 11-December)");
+                    showMonthlyExpenses(option1,option2);
                     break;
                 case 2:
                     /* replace the following code for appropriate function once it's implemented */
@@ -44,24 +41,26 @@ public class DisplayExpensesUI {
         } while(option != 0);
     }
     
-    public void showMonthlyExpenses(int mes){ //...
+    public void showMonthlyExpenses(int ano,int mes){ //...
        IExpenseTypeRepository typerepo=new ExpenseTypeRepository();
        IExpenseRepository repo=new ExpenseRepository();
-        System.out.println("mes "+mes);
+       //Compara cada tipo de despesa disponiveis, com todas as despesas existentes
         for (int i = 0; i < typerepo.getTypeRep().size(); i++) { //lista de tipos
-             System.out.println("mes1111 "+mes);
+           System.out.println("Tipo de Despesa: "+typerepo.getTypeRep().get(i).getDescription());
             for (int j = 0; j <repo.getAllExpenses().size(); j++) { //lista de expenses
-                 System.out.println("mes123"+mes);
-                 System.out.println("mes123 "+repo.getAllExpenses().get(j).getExpenseMonth());
-                if(mes==repo.getAllExpenses().get(j).getExpenseMonth()){ 
-                     System.out.println("tipo1 "+typerepo.getTypeRep().get(i).getDescription());
-                      System.out.println("tiii "+repo.getAllExpenses().get(j).getDescription());
-                     if( typerepo.getTypeRep().get(i).getDescription().equals(repo.getAllExpenses().get(j).getExptype().getDescription()))//se for do tipo na pos (i)
+                System.out.println("Ano "+repo.getAllExpenses().get(j).getExpenseYear());
+                System.out.println("Mes utilizador "+mes);
+                System.out.println("Mes das despesas "+repo.getAllExpenses().get(j).getExpenseMonth());
+                if(mes+1==repo.getAllExpenses().get(j).getExpenseMonth()){ 
+                     System.out.println("tipos de Despesas "+typerepo.getTypeRep().get(i).getDescription());
+                     System.out.println("tipo da despesa "+repo.getAllExpenses().get(j).getExptype().getDescription());
+                     if( typerepo.getTypeRep().get(i).getDescription().equals(repo.getAllExpenses().get(j).getExptype().getDescription()))// compara os tipos da despesas, com os tipos existentes)
                      {
-                         System.out.println(repo.getAllExpenses().get(i).toString());
+                         System.out.println("igual "+repo.getAllExpenses().get(j).toString());
                      }
                 }
             }
+            System.out.println("-------------------------------------------------------------");
         }
     }
 

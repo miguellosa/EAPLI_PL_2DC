@@ -29,7 +29,7 @@ class ExpenseRegisterUI {
         BigDecimal amount = new BigDecimal(value);
         String type = Console.readLine("Type:");
         
-        
+
         
         ExpenseRegisterController controller = new ExpenseRegisterController();
 
