@@ -28,6 +28,8 @@ public class ExpenseBootstrapper {
         repo.save(new Expense("Café", 2013, 3, 4, new BigDecimal(5.0),new ExpenseType("Alimentação"), new PaymentMethodCash(" ")));
         repo.save(new Expense("Roupa", 2013, 3, 4, new BigDecimal(5.0),new ExpenseType("Vestuário"), new PaymentMethodCash(" ")));
         repo.save(new Expense("Lavandaria", 2013, 3, 4, new BigDecimal(5.0),new ExpenseType("Vestuário"), new PaymentMethodCash(" ")));
+        repo.save(new Expense("Roupa2012", 2012, 4, 3, new BigDecimal(5.0),new ExpenseType("Vestuário"), new PaymentMethodCash(" ")));
+        repo.save(new Expense("Lavandaria2012", 2012, 3, 4, new BigDecimal(5.0),new ExpenseType("Vestuário"), new PaymentMethodCash(" ")));
         
     }
 }
