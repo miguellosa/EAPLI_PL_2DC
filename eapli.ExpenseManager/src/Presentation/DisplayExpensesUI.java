@@ -61,12 +61,12 @@ public class DisplayExpensesUI extends BaseUI {
         for (int i = 0; i < typerepo.getTypeRep().size(); i++) { //lista de tipos
            System.out.println("Tipo de Despesa: "+typerepo.getTypeRep().get(i).getDescription());
             for (int j = 0; j <repo.getAllExpenses().size(); j++) { //lista de expenses
-                System.out.println("Ano "+repo.getAllExpenses().get(j).getExpenseYear());
-                System.out.println("Mes utilizador "+mes);
-                System.out.println("Mes das despesas "+repo.getAllExpenses().get(j).getExpenseMonth());
-                if(mes+1==repo.getAllExpenses().get(j).getExpenseMonth()){ 
-                     System.out.println("tipos de Despesas "+typerepo.getTypeRep().get(i).getDescription());
-                     System.out.println("tipo da despesa "+repo.getAllExpenses().get(j).getExptype().getDescription());
+                //System.out.println("Ano "+repo.getAllExpenses().get(j).getExpenseYear());
+                //System.out.println("Mes utilizador "+mes);
+                //System.out.println("Mes das despesas "+repo.getAllExpenses().get(j).getExpenseMonth());
+                if(mes+1==repo.getAllExpenses().get(j).getExpenseMonth() && ano==repo.getAllExpenses().get(j).getExpenseYear()){ 
+                     //System.out.println("tipos de Despesas "+typerepo.getTypeRep().get(i).getDescription());
+                     //System.out.println("tipo da despesa "+repo.getAllExpenses().get(j).getExptype().getDescription());
                      if( typerepo.getTypeRep().get(i).getDescription().equals(repo.getAllExpenses().get(j).getExptype().getDescription()))// compara os tipos da despesas, com os tipos existentes)
                      {
                          System.out.println("igual "+repo.getAllExpenses().get(j).toString());
