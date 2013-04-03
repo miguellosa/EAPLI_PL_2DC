@@ -4,6 +4,8 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
+
 /**
  *
  * @author Miguel
@@ -16,6 +18,6 @@ public abstract class BaseUI {
     
     protected abstract void mainLoop();
     
-    //TO DO definir controlador abstracto
+    public abstract BaseController controller();
     
 }

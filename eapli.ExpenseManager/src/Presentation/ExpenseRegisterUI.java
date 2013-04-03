@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.ExpenseRegisterController;
 import Controllers.ExpenseTypeController;
 import Controllers.PaymentMethodController;
@@ -21,6 +22,11 @@ import java.util.List;
  * @author Paulo Gandra Sousa
  */
 class ExpenseRegisterUI extends BaseUI {
+    
+    @Override
+    public BaseController controller(){
+        return null;
+    }
 
     @Override
     public void show() {

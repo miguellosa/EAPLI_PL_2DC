@@ -1,11 +1,17 @@
 package Presentation;
 
+import Controllers.BaseController;
+
 /**
  * User interface to be called when functions aren't implemented yet
  * @author João Carreira
  */
 public class UnavailableFunctionUI extends BaseUI {
 
+    @Override
+    public BaseController controller(){
+        return null;
+    }
     @Override
     public void show() {
         headline();
