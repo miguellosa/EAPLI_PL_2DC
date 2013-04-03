@@ -15,12 +15,12 @@ public class UnavailableFunctionUI extends BaseUI {
     @Override
     protected void headline() {
         System.out.println("======================");
-        System.out.println("  Configurations  ");
+        System.out.println("  Unavailable function!  ");
         System.out.println("======================\n");
     }
 
     @Override
     public void mainLoop(){
-        System.out.println("Unavailable function!\nPlease try again!\n\n");
+        System.out.println("Please try again!\n\n");
     }
 }
