@@ -14,9 +14,18 @@ import java.util.List;
 public class ExpenseRepository  implements IExpenseRepository
 {
     // class member
-    private static List<Expense> listExpense= new ArrayList<Expense>();
+    private List<Expense> listExpense;
+    private static ExpenseRepository instance = null;
 
-    public ExpenseRepository() {}
+    private ExpenseRepository() {
+        listExpense = new ArrayList<Expense>();
+    }
+    
+    public static ExpenseRepository getInstance(){
+        if(instance == null)
+            instance = new ExpenseRepository();
+        return instance;
+    }
     
     public void save(Expense exp)
     {
