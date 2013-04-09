@@ -40,6 +40,7 @@ class ExpenseRegisterUI extends BaseUI {
         
         PaymentMethodController paymentMethod;
         ExpenseTypeController expenseType;
+        ExpenseRegisterController controller;
         
         
         String what = Console.readLine("Description:");
@@ -53,7 +54,7 @@ class ExpenseRegisterUI extends BaseUI {
         for (int i = 0; i<listExpenseTypePrint.size();i++){
             System.out.println(i+1 +" - "+ listExpenseTypePrint.get(i).getDescription());
         }
-        int type = Console.readInteger("Select One:");
+        int type = Console.readInteger("Select One:");           
 
         System.out.println("Method: ");
         paymentMethod = new PaymentMethodController();
@@ -64,10 +65,17 @@ class ExpenseRegisterUI extends BaseUI {
         }
         int selectedMethod = Console.readInteger("Select One:");
         
-        ExpenseRegisterController controller = new ExpenseRegisterController();
 
-        controller.registerExpense(what, date, amount,listExpenseTypePrint.get(type-1),listPaymentMethodToPrint.get(selectedMethod-1));
-
+        if (paymentMethod.verifyIsCheck(listPaymentMethodToPrint.get(selectedMethod-1)) == true ){
+            System.out.println("Create new check: ");
+            int checkNumber = Console.readInteger("Check:Number: ");
+            PaymentMethodController checkCreateController = new PaymentMethodController();
+            controller = new ExpenseRegisterController();
+            controller.registerExpense(what, date, amount,listExpenseTypePrint.get(type-1),checkCreateController.RegisterPaymentMethodCheckWithoutSave(what, checkNumber));
+        } else {
+            controller = new ExpenseRegisterController();
+            controller.registerExpense(what, date, amount,listExpenseTypePrint.get(type-1),listPaymentMethodToPrint.get(selectedMethod-1));
+        }
         
         System.out.println("expense recorded.");
     }

@@ -25,9 +25,8 @@ public class ExpenseRegisterController {
 
 
 
-    public void registerExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMethod payMeth) {
+    public void registerExpense(String what, Date date, BigDecimal amount, ExpenseType expType, PaymentMethod payMeth) {    
         Expense expense = new Expense( what, date, amount, expType, payMeth);
-
         IExpenseRepository repo = new ExpenseRepository();
         repo.save(expense);
     }   

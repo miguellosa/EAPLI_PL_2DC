@@ -4,6 +4,9 @@
  */
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Class that will instantiate the predefined payment types: Credit Card, Debit Card, Check, Cash.
  * @author Andre 1100859
@@ -11,12 +14,14 @@ package Model;
  * @version 1.0
  */
 public class PaymentType {
+    private String type;
+            
     public static final PaymentType CreditCard = new PaymentType("Credit Card");
     public static final PaymentType DebitCard = new PaymentType("Debit Card");
     public static final PaymentType Check = new PaymentType("Check");
     public static final PaymentType Cash = new PaymentType("Cash");
     
-    private String type;
+    
 
     /**
      * Method that will create a new object of type of payment.
@@ -29,7 +34,7 @@ public class PaymentType {
     private PaymentType(String type) {
         this.type = type;
     }
-    
+
    
     
 }
