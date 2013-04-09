@@ -36,16 +36,31 @@ public class BaseController {
     }
     
     
-//    public BigDecimal getWeeklyExpenses()
-//    {
-//        /* saves the number of the current week */
-//        int week = DateTime.weekNumber(DateTime.today());
-//        /* saves the current year */
-//        int year = DateTime.currentYear();
-//        
-//        /* creates new instance of ExpenseRepository and saves the all current week expense in a list */
-//        IExpenseRepository rep = new ExpenseRepository();
-//        
-//    }
+    /**
+     * shows the expenses of the current week
+     */
+    public BigDecimal showWeeklyExpenses()
+    {
+        /* new expense repository instance */
+        IExpenseRepository rep = new ExpenseRepository();
+        /* saves current year and month */
+        int week = DateTime.currentWeekNumber();
+        int year = DateTime.currentYear();
+        /* variable to sum up all weekly expenses */
+        BigDecimal weeklyExpense = new BigDecimal(0);
+        /* cycles the entire repository */
+        int i = 0;
+        for(; i < rep.getAllExpenses().size(); i++)
+        {
+            /* filters only for the current week */
+            if(rep.getAllExpenses().get(i).getExpenseYear() == year && rep.getAllExpenses().get(i).getExpenseWeek() == week)
+            {
+                /* adds item expense to weekly expense variable */
+                weeklyExpense = weeklyExpense.add(rep.getAllExpenses().get(i).getAmount());
+            }
+        }
+        /* returns weekly expense */
+        return weeklyExpense;
+    }
     
 }
