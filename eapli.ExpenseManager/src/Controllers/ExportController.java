@@ -18,15 +18,18 @@ import java.util.List;
 public class ExportController {
     
     
-    /*
+    
     public List<Income> exportIncome(Date date1,Date date2){
         
         List<Income> incomes=new ArrayList();
         List<Income> returnlist=new ArrayList();
         IIncomeRepository repo = new IncomeRepository();
         incomes=repo.getAllIncomes();
-        for(Income i:incomes)
-            if(i.)
-            
-    }*/
+        for(Income i:incomes){
+            if(i.getIncomeDate().compareTo(date1)>0 && i.getIncomeDate().compareTo(date2)<0){
+                returnlist.add(i);
+            }
+        }
+        return returnlist;
+    }
 }
