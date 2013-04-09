@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.ExpenseTypeController;
 import Controllers.PaymentMethodController;
 import eapli.util.Console;
@@ -14,6 +15,11 @@ import java.math.BigDecimal;
  * @author Miguel
  */
 public class PaymentMethodRegisterUI extends BaseUI {
+    
+    @Override
+    public BaseController controller(){
+        return null;
+    }
 
     @Override
     public void show() {

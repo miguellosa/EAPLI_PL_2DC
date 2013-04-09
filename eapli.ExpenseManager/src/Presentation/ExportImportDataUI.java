@@ -1,5 +1,6 @@
 package Presentation;
 
+import Controllers.BaseController;
 import eapli.util.Console;
 
 /**
@@ -7,6 +8,11 @@ import eapli.util.Console;
  * @author João Carreira
  */
 public class ExportImportDataUI extends BaseUI {
+    
+    @Override
+    public BaseController controller(){
+        return null;
+    }
 
     @Override
     public void show() {
