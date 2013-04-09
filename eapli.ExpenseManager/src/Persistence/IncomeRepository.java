@@ -1,5 +1,6 @@
 package Persistence;
 
+import Model.Expense;
 import Model.Income;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,5 +16,9 @@ public class IncomeRepository implements IIncomeRepository {
         if (income==null) throw new IllegalArgumentException();
         listIncome.add(income);
       
+    }
+    
+     public List<Income> getAllIncomes(){
+        return listIncome;
     }
 }
