@@ -6,7 +6,6 @@ package Controllers;
 
 
 import Model.*;
-import Persistence.ExpenseTypeRepository;
 import Persistence.IExpenseTypeRepository;
 import Persistence.IPaymentMethodRepository;
 import Persistence.PaymentMethodRepository;
@@ -50,5 +49,24 @@ public class PaymentMethodController {
     public List<PaymentMethod> getPaymentMethods(){
         IPaymentMethodRepository repo = new PaymentMethodRepository();
         return repo.getPaymentMehtodList();    
+    }
+    
+   public PaymentMethod RegisterPaymentMethodCheckWithoutSave(String desc, int num) {
+        PaymentMethodCheck payMethCheck = new PaymentMethodCheck(desc, num);
+        return payMethCheck;
+    }
+/*
+    public PaymentMethod getLastCheck(){
+        int numberElem;
+        IPaymentMethodRepository repo = new PaymentMethodRepository();
+        numberElem = repo.getPaymentMehtodList().size();
+        return repo.getPaymentMehtodList().get(numberElem-1);
+    }
+ */   
+    public Boolean verifyIsCheck(PaymentMethod payToTest){
+        if (payToTest.getPaymentMethodPaymentType() == PaymentType.Check){
+            return true;
+        }
+        return false;
     }
 }
