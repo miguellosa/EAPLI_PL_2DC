@@ -28,8 +28,8 @@ public class PaymentMethodController {
         repo.save(payMethCash);
     }
     
-    public void RegisterPaymentMethodCheck(String desc, int num) {
-        PaymentMethodCheck payMethCheck = new PaymentMethodCheck(desc, num);
+    public void RegisterPaymentMethodCheck(String desc) {
+        PaymentMethodCheck payMethCheck = new PaymentMethodCheck(desc,0);
         IPaymentMethodRepository repo = new PaymentMethodRepository();
         repo.save(payMethCheck);
     }

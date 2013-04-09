@@ -56,8 +56,7 @@ public class PaymentMethodRegisterUI extends BaseUI {
                     break;
                 case 2:
                     desc = Console.readLine("Description: ");
-                    num = Console.readInteger("Check ID number: ");
-                    controller.RegisterPaymentMethodCheck(desc, num);
+                    controller.RegisterPaymentMethodCheck(desc);
                     op=-1;
                     break;
                 case 3:
