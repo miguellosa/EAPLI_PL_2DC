@@ -21,12 +21,10 @@ public class ExpenseTypeController {
 
     public void RegisterExpenseType(String desc) {
         ExpenseType expType = new ExpenseType(desc);
-        IExpenseTypeRepository repo = new ExpenseTypeRepository();
-        repo.save(expType);
+        ExpenseTypeRepository.getInstance().save(expType);
     }
     public List<ExpenseType> getRegisterExpenseTypeList(){
-        IExpenseTypeRepository repo = new ExpenseTypeRepository();
-        return repo.getTypeRep();
+        return ExpenseTypeRepository.getInstance().getTypeRep();
     }
     
 }
