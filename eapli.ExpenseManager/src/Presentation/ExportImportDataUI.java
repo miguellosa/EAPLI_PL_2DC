@@ -3,6 +3,11 @@ package Presentation;
 import Controllers.BaseController;
 import eapli.util.Console;
 import java.util.Date;
+import java.util.*;
+import Model.Expense;
+import Model.Income;
+import Controllers.ExportController;
+import ImportsExports.ExportCSV;
 /**
  * User interface displaying the available options within "ExportImportDataUI"
  * @author João Carreira
@@ -40,8 +45,18 @@ public class ExportImportDataUI extends BaseUI {
             switch(option){
                 case 1:
                    
+                    
+                    List<Expense> tempListExp = new ArrayList();
+                    List<Income> tempListInc = new ArrayList();
                     Date datebegin = Console.readDate("Beginning Date: ");
                     Date datend = Console.readDate("End Date: ");
+                    
+                    ExportController expController = new ExportController();
+                    tempListExp = expController.exportExpenses(datebegin, datend);
+                    tempListInc = expController.exportIncome(datebegin, datend);
+                    
+                    ExportCSV exp = new ExportCSV();
+                    exp.exportExpensesIncomesToCSV(tempListExp, tempListInc);
                     /* replace the following code for appropriate function once it's implemented */
                     UnavailableFunctionUI un1 = new UnavailableFunctionUI();
                     un1.mainLoop();
