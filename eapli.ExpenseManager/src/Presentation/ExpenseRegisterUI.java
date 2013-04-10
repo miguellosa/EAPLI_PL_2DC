@@ -10,6 +10,8 @@ import Controllers.ExpenseTypeController;
 import Controllers.PaymentMethodController;
 import Model.ExpenseType;
 import Model.PaymentMethod;
+import Persistence.ExpenseRepository;
+import Persistence.IExpenseRepository;
 
 import eapli.util.Console;
 import java.math.BigDecimal;

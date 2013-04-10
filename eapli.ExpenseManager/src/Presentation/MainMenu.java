@@ -1,67 +1,89 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Presentation;
 
+import Controllers.BaseController;
 import eapli.util.Console;
 
-/**
- *
- * @author Paulo Gandra Sousa
- */
-public class MainMenu {
 
+public class MainMenu extends BaseUI {
+    
+    @Override
+    public BaseController controller(){
+        return null;
+    }
+
+    @Override
+    public void show() {
+        headline();
+        mainLoop();
+    }
+    
+    @Override
+    protected void headline() {
+        System.out.println("===================");
+        System.out.println("  EXPENSE MANAGER  ");
+        System.out.println("===================\n");
+    }
+
+    @Override
     public void mainLoop() {
         int option;
+        final int REGISTEREXPENSE=1, REGISTERINCOME=2, REGISTERPAYMENTMETHOD=3, REGISTERINCOMETYPE=4, REGISTEREXPENSETYPE=5,QUERIES=6, IMPORTEXPORT=7, QUIT=0;  
         do {
-            System.out.println("===================");
-            System.out.println("  EXPENSE MANAGER  ");
-            System.out.println("===================\n");
-            System.out.println("1. Register an expense");
-            System.out.println("2. Define payment");
-            System.out.println("3. Register income");
-            System.out.println("4. Display expenses");
-            System.out.println("5. Import/Export data");
-            System.out.println("6. Configurations");
-
-            System.out.println("0. Exit\n\n");
+            System.out.println("1. Register Expense");
+            System.out.println("2. Register Income");
+            System.out.println("3. Register Payment Method");
+            System.out.println("4. Register Income Type");
+            System.out.println("5. Register Expense Type");
+            System.out.println("6. Queries");
+            System.out.println("7. Import/Export data");
+            System.out.println("0. Exit\n");
+            
             option = Console.readInteger("Please choose a option");
             
             switch (option) {
-                case 0:
-                    System.out.println("bye bye ...");
+                case QUIT:
+                    System.out.println("Arrivederci !");
                     return;
-                case 1:
-                    ExpenseRegisterUI ui = new ExpenseRegisterUI();
-                    ui.mainLoop();
+                    
+                case REGISTEREXPENSE:
+                    ExpenseRegisterUI exReg = new ExpenseRegisterUI();
+                    exReg.show();
                     break;
-                case 2:
-                    /* replace the following code for appropriate function once it's implemented */
+                    
+                case REGISTERINCOME:
+                    IncomeRegisterUI incReg = new IncomeRegisterUI();
+                    incReg.show();
+                    break;
+                    
+                case REGISTERPAYMENTMETHOD:
                     PaymentMethodRegisterUI pmrUI = new PaymentMethodRegisterUI();
-                    pmrUI.mainLoop();
+                    pmrUI.show();
                     break;
-                case 3:
-                    /* replace the following code for appropriate function once it's implemented */
-                    UnavailableFunctionUI un2 = new UnavailableFunctionUI();
-                    un2.mainLoop();
+                    
+                case REGISTERINCOMETYPE:
+                    IncomeTypeUI incType = new IncomeTypeUI();
+                    incType.show();
                     break;
-                case 4:
-                    /* jumps to submenu "Display Expenses" */
-                    DisplayExpensesUI dispEx = new DisplayExpensesUI();
-                    dispEx.mainLoop();
+                    
+                case REGISTEREXPENSETYPE:
+                    ExpenseTypeUI type = new ExpenseTypeUI();
+                    type.show();
                     break;
-                case 5:
-                    /* jumps to submenu "Export(import Data" */
+                    
+                case QUERIES:
+                    QueriesUI quer = new QueriesUI();
+                    quer.show();
+                    break;
+                    
+                case IMPORTEXPORT:
                     ExportImportDataUI eID = new ExportImportDataUI();
-                    eID.mainLoop();
+                    eID.show();
                     break;
-                case 6:
-                    /* jumps to submenu "Configure Alert" */
-                    ConfigurationsUI config = new ConfigurationsUI();
-                    config.mainLoop();
+                    
                 default:
                     System.out.println("Unknown option\nPlease try again!");
+                    break;
             }
         } while (option != 0);
     }
