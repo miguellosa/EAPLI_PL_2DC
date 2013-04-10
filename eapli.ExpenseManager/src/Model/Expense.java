@@ -76,7 +76,6 @@ public class Expense {
     }
       public int getExpenseYear() {
         return DateTime.Year(DateTime.dateToCalendar(dateOccurd));
-        
     }
 
     public Date getDateOccurd() {
