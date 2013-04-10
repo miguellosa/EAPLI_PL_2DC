@@ -22,10 +22,19 @@ public class Income {
         return "Income Type: "+ incomeType + "\nDate: "+ incomeDate+"\n Description: "+ incomeDescription + "\nValue: "+ incomeValue+"\n";
     }
     
-    
+    public IncomeType getIncomeType(){
+        return incomeType;
+    }
 
+    public double getIncomeValue(){
+        return incomeValue;
+    }
     
+    public Date getIncomeDate(){
+        return incomeDate;
+    }
     
-    
-    
+    public String getIncomeDescription(){
+        return incomeDescription;
+    }
 }

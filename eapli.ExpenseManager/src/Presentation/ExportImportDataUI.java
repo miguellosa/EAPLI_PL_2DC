@@ -2,7 +2,7 @@ package Presentation;
 
 import Controllers.BaseController;
 import eapli.util.Console;
-
+import java.util.Date;
 /**
  * User interface displaying the available options within "ExportImportDataUI"
  * @author João Carreira
@@ -39,6 +39,9 @@ public class ExportImportDataUI extends BaseUI {
             option = Console.readInteger("Please choose a option");
             switch(option){
                 case 1:
+                   
+                    Date datebegin = Console.readDate("Beginning Date: ");
+                    Date datend = Console.readDate("End Date: ");
                     /* replace the following code for appropriate function once it's implemented */
                     UnavailableFunctionUI un1 = new UnavailableFunctionUI();
                     un1.mainLoop();
