@@ -79,6 +79,12 @@ public class Expense {
         
     }
 
+    public Date getDateOccurd() {
+        return dateOccurd;
+    }
+
+      
+      
     public String toString(){
         return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd;
     }

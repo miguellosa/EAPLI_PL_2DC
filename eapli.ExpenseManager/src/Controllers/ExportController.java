@@ -4,7 +4,9 @@
  */
 package Controllers;
 
+import Model.Expense;
 import Model.Income;
+import Persistence.ExpenseRepository;
 import Persistence.IIncomeRepository;
 import Persistence.IncomeRepository;
 import java.util.ArrayList;
@@ -16,8 +18,6 @@ import java.util.List;
  * @author Miguel
  */
 public class ExportController {
-    
-    
     
     public List<Income> exportIncome(Date date1,Date date2){
         
@@ -31,5 +31,17 @@ public class ExportController {
             }
         }
         return returnlist;
+    }
+    
+    public List<Expense> exportExpenses(Date datebegin, Date datend) {
+        List<Expense> expenses = new ArrayList();
+        List<Expense> expenseTemp = ExpenseRepository.getInstance().getAllExpenses();
+
+        for (Expense e : expenses) {
+            if (e.getDateOccurd().compareTo(datebegin) > 0 && e.getDateOccurd().compareTo(datend) < 0) {
+                expenseTemp.add(e);
+            }
+        }
+        return expenseTemp;
     }
 }
