@@ -78,6 +78,8 @@ public class Expense {
         return DateTime.Year(DateTime.dateToCalendar(dateOccurd));
     }
 
+      
+      
     public Date getDateOccurd() {
         return dateOccurd;
     }
