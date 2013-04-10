@@ -57,29 +57,21 @@ public class BaseController {
     }
     
     /**
-     * shows the expenses of the current week
+     * calculates the sum of the current week's expenses
+     * @return sum of current week's expense
      */
     public BigDecimal showWeeklyExpenses()
     {
-        
-        List<Expense> rep = ExpenseRepository.getInstance().getAllExpenses();
-        
-        /* saves current year and month */
-        int week = DateTime.currentWeekNumber();
-        int year = DateTime.currentYear();
+        /* expense list with all expenses */
+        List<Expense> listExpense;
         /* variable to sum up all weekly expenses */
         BigDecimal weeklyExpense = new BigDecimal(0);
-        /* cycles the entire repository */
-        int i = 0;
-        for(; i < rep.size(); i++)
-        {
-            /* filters only for the current week */
-            if(rep.get(i).getExpenseYear() == year && rep.get(i).getExpenseWeek() == week)
-            {
-                /* adds item expense to weekly expense variable */
-                weeklyExpense = weeklyExpense.add(rep.get(i).getAmount());
-            }
-        }
+        /* gets a list with current week's expenses */
+        listExpense = ExpenseRepository.getInstance().getCurrentWeekExpenses(DateTime.currentWeekNumber(), DateTime.currentYear());
+        /* new Expense Record */
+        ExpenseRecord expRec = new ExpenseRecord();
+        /* adds up all values of the list */
+        weeklyExpense = expRec.getSumExpenses(listExpense);
         /* returns weekly expense */
         return weeklyExpense;
     }
