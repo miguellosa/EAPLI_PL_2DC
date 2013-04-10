@@ -29,6 +29,7 @@ public class PaymentMethodController {
     }
     
     public void RegisterPaymentMethodCheck(String desc) {
+        //teste
         PaymentMethodCheck payMethCheck = new PaymentMethodCheck(desc,0);
         IPaymentMethodRepository repo = new PaymentMethodRepository();
         repo.save(payMethCheck);
