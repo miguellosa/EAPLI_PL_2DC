@@ -14,9 +14,20 @@ import java.util.List;
  */
 public class ExpenseTypeRepository implements IExpenseTypeRepository{
     
-    private static List<ExpenseType> listExpenseType = new ArrayList<ExpenseType>();
+    private static List<ExpenseType> listExpenseType;
     
-    public ExpenseTypeRepository(){}
+    private static ExpenseTypeRepository instance = null;
+    
+    private ExpenseTypeRepository(){
+        listExpenseType = new ArrayList<ExpenseType>();
+    }
+    
+    public static ExpenseTypeRepository getInstance(){
+        if(instance == null)
+            instance = new ExpenseTypeRepository();
+        return instance;    
+    }
+            
     
     public void save(ExpenseType type)
     {

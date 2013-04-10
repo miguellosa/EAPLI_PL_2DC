@@ -13,13 +13,11 @@ import Persistence.IExpenseTypeRepository;
  * @author i100447
  */
 public class ExpenseTypeBootstraper {
-     static {
-        IExpenseTypeRepository repo = new ExpenseTypeRepository();
-        
-        repo.save(new ExpenseType("Alimentação"));
-        repo.save(new ExpenseType("Vestuário"));
-        repo.save(new ExpenseType("Transportes"));
-        repo.save(new ExpenseType("Lazer"));
+     static {       
+        ExpenseTypeRepository.getInstance().save(new ExpenseType("Alimentação"));
+        ExpenseTypeRepository.getInstance().save(new ExpenseType("Vestuário"));
+        ExpenseTypeRepository.getInstance().save(new ExpenseType("Transportes"));
+        ExpenseTypeRepository.getInstance().save(new ExpenseType("Lazer"));
         
      }
      
