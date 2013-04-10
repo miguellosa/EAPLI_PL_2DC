@@ -29,5 +29,8 @@ public class ExpenseRegisterController {
         Expense expense = new Expense( what, date, amount, expType, payMeth);
         
         ExpenseRepository.getInstance().save(expense);
+        
+        BigDecimal value = new BigDecimal (0.0);
+        value.subtract(amount);
     }   
 }
