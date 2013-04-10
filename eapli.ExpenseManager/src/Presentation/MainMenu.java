@@ -30,6 +30,7 @@ public class MainMenu extends BaseUI {
         int option;
         final int REGISTEREXPENSE=1, REGISTERINCOME=2, REGISTERPAYMENTMETHOD=3, REGISTERINCOMETYPE=4, REGISTEREXPENSETYPE=5,QUERIES=6, IMPORTEXPORT=7, QUIT=0;  
         do {
+            System.out.println("  ===  Main Menu  ===  ");
             System.out.println("1. Register Expense");
             System.out.println("2. Register Income");
             System.out.println("3. Register Payment Method");
