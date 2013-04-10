@@ -51,6 +51,7 @@ public class PaymentMethodRegisterUI extends BaseUI {
                     break;
                 case 1:
                     desc = Console.readLine("Description: ");
+                    //teste
                     controller.RegisterPaymentMethodCash(desc);
                     op=-1;
                     break;
