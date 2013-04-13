@@ -72,6 +72,18 @@ public class ExpenseRepository  implements IExpenseRepository
         }
         return tempList;
     }
+    
+    /**
+     * Method that will be return the expenses filtered by year, month and type
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 
+     * @param year year of the expense
+     * @param month month of the expense
+     * @param type type of the expense
+     * @return expenses filtered by year, month and type, specified by parameter
+     */
     public List<Expense> getExpensesTypeByMonth (int year, int month, ExpenseType type){
         
         List<Expense> filteredExpenses=new ArrayList<Expense>();
