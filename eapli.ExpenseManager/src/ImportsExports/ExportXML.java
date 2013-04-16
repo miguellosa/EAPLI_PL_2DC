@@ -45,6 +45,9 @@ public class ExportXML {
             writer.write("<\\Incomes>");
             writer.write("<\\Items>");
             
+            writer.close();
+            outputStream.close();
+            
         } catch (Exception ex) {
             ex.getMessage();
         }

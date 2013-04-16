@@ -36,7 +36,10 @@ public class ExportCSV {
                 writer.write(listInc.get(i).toString());
                 writer.write("\n");
             }
-
+            
+            writer.close();
+            outputStream.close();
+            
         } catch (Exception ex) {
             ex.getMessage();
         }
