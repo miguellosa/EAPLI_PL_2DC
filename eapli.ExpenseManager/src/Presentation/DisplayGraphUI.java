@@ -91,9 +91,12 @@ public class DisplayGraphUI extends BaseUI {
      * @since 1.0
      * @return null
      */
+    
+    private BaseController controller = new BaseController();
+    
    @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     /**

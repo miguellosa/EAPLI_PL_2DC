@@ -8,13 +8,16 @@ import Controllers.BaseController;
  */
 public class UnavailableFunctionUI extends BaseUI {
 
+     private BaseController controller = new BaseController(); 
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
     @Override
     public void show() {
         headline();
+        System.out.println(controller.showWeeklyExpenses()+"            |||            "+controller.getCurrentMonthExpenses());
         mainLoop();
     }
     

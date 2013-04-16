@@ -14,9 +14,11 @@ import ImportsExports.ExportCSV;
  */
 public class ExportImportDataUI extends BaseUI {
     
+    private BaseController controller = new BaseController();
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     @Override

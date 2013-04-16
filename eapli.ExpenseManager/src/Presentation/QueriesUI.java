@@ -13,9 +13,11 @@ import eapli.util.Console;
  */
 public class QueriesUI extends BaseUI {
     
+    private BaseController controller = new BaseController();
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     @Override

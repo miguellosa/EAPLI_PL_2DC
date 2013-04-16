@@ -11,9 +11,11 @@ import java.util.List;
 
 public class IncomeRegisterUI extends BaseUI {
     
+    private BaseController controller = new BaseController();
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     @Override

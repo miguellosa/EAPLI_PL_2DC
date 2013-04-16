@@ -3,18 +3,22 @@ package Presentation;
 
 import Controllers.BaseController;
 import eapli.util.Console;
+import java.math.BigDecimal;
 
 
 public class MainMenu extends BaseUI {
     
+    private BaseController controller = new BaseController();
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     @Override
     public void show() {
         headline();
+        System.out.println(controller.showWeeklyExpenses()+"            |||            "+controller.getCurrentMonthExpenses());
         mainLoop();
     }
     
