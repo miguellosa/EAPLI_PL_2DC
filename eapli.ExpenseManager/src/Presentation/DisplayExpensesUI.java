@@ -39,6 +39,7 @@ public class DisplayExpensesUI extends BaseUI {
             
             System.out.println("1. Monthly expenses");
             System.out.println("2. Weekly expenses");
+            System.out.println("3. Monthly Expenses Value");
             System.out.println("0. Go back\n\n");
             option = Console.readInteger("Please choose an option");
             switch(option){
@@ -56,6 +57,13 @@ public class DisplayExpensesUI extends BaseUI {
                     UnavailableFunctionUI un2 = new UnavailableFunctionUI();
                     un2.mainLoop();
                     break;
+                case 3:
+                    option1 = Console.readInteger("Which Year?");
+                    option2 = Console.readInteger("Which Month?\n (0-January until 11-December)");
+                    sum = baseCont.getMonthlyExpenses(option2, option1);
+                    System.out.println(option1);
+                    System.out.println("Year: " + option1 + "  Month: " + option2);
+                    System.out.println("Monthly Expense: " + sum.setScale(2));
                 case 0:
                     /* returns to previous menu */
                     return;
