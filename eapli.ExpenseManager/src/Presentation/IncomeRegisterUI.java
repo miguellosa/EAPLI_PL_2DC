@@ -21,6 +21,7 @@ public class IncomeRegisterUI extends BaseUI {
     @Override
     public void show() {
         headline();
+        System.out.println(controller.showWeeklyExpenses()+"            |||            "+controller.getCurrentMonthExpenses());
         mainLoop();
     }
     
