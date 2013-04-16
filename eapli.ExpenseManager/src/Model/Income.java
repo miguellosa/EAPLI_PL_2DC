@@ -1,16 +1,17 @@
 package Model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 
 public class Income {
     
     private IncomeType incomeType;
-    private double incomeValue;
+    private BigDecimal incomeValue;
     private Date incomeDate;
     private String incomeDescription;
 
-    public Income(IncomeType incomeType, double incomeValue, Date incomeDate, String incomeDescription) {
+    public Income(IncomeType incomeType, BigDecimal incomeValue, Date incomeDate, String incomeDescription) {
         this.incomeType = incomeType;
         this.incomeValue = incomeValue;
         this.incomeDate = incomeDate;
@@ -26,7 +27,7 @@ public class Income {
         return incomeType;
     }
 
-    public double getIncomeValue(){
+    public BigDecimal getIncomeValue(){
         return incomeValue;
     }
     
@@ -36,5 +37,14 @@ public class Income {
     
     public String getIncomeDescription(){
         return incomeDescription;
+    }
+    
+    public String toStringXML(){
+        return "<income>"
+                + "<description>"+incomeDescription+"<\\description>"
+                + "<date>"+incomeDate+"<\\date>"
+                + "<amount> "+incomeValue+"<\\amount>"
+                + "<type>"+incomeType+"<\\type>"
+                + "<\\income>";
     }
 }

@@ -89,6 +89,15 @@ public class Expense {
     public String toString(){
         return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd;
     }
+    
+     public String toStringXML(){
+        return "<expense>"
+                + "<description>"+description+"<\\description>"
+                + "<date>"+dateOccurd+"<\\date>"
+                + "<amount> "+amount+"<\\amount>"
+                + "<type>"+exptype+"<\\type>"
+                + "<\\expense>";
+    }
 
     public ExpenseType getExptype() {
         return exptype;

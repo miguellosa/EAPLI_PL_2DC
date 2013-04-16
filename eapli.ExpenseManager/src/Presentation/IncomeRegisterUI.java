@@ -5,6 +5,7 @@ import Controllers.IncomeRegisterController;
 import Model.IncomeType;
 import Persistence.IncomeTypeRepository;
 import eapli.util.Console;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class IncomeRegisterUI extends BaseUI {
 
         String description = Console.readLine("Description:");
         Date date = Console.readDate("When:");
-        double value = Console.readDouble("Amount:");
+        BigDecimal value = new BigDecimal(Console.readDouble("Amount:"));
 
 
 
