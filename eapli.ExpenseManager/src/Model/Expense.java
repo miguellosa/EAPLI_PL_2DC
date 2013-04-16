@@ -91,11 +91,11 @@ public class Expense {
     }
     
      public String toStringXML(){
-        return "<expense>"
-                + "<description>"+description+"<\\description>"
-                + "<date>"+dateOccurd+"<\\date>"
-                + "<amount> "+amount+"<\\amount>"
-                + "<type>"+exptype+"<\\type>"
+        return "<expense\n>"
+                + " <description>"+description+"<\\description\n>"
+                + " <date>"+dateOccurd+"<\\date\n>"
+                + " <amount> "+amount+"<\\amount\n>"
+                + " <type>"+exptype+"<\\type\n>"
                 + "<\\expense>";
     }
 
