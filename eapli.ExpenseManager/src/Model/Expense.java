@@ -66,7 +66,28 @@ public class Expense {
         return DateTime.weekNumber(DateTime.dateToCalendar(dateOccurd));
     }
     
-    
+    public boolean compareyear(int y)
+    {
+        if(y==getExpenseYear())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public boolean comparemonth(int m)
+    {
+        if(m==getExpenseMonth())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     /**
      * @return the month of an expense
      */
