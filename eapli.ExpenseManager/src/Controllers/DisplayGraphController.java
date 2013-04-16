@@ -50,9 +50,9 @@ public class DisplayGraphController {
      * @param types type of expenses
      * @return sums of expenses grouped by type
      */
-    public void getSum(int year, int month ,List<ExpenseType> types){
+    public List<BigDecimal> getSum(int year, int month ,List<ExpenseType> types){
         
-        BigDecimal sums[]=new BigDecimal[ExpenseTypeRepository.getInstance().getTypeRep().size()];
+        List<BigDecimal> sums=new ArrayList<BigDecimal>();
         for(int i=0;i<types.size();i++)
         {
             List<Expense> expenses=new ArrayList<Expense>();
@@ -60,11 +60,8 @@ public class DisplayGraphController {
             ExpenseRecord calculate=new ExpenseRecord();
             BigDecimal sum = BigDecimal.ZERO;
             sum=calculate.getSumExpenses(expenses);
-            sums[i]=sum;
-            //TODO: falta acrescentar a matriz que sera o grafico
+            sums.add(sum); 
         }
-        
-        //FIX: returnar um array de somas sums  return sums;      
+        return sums;
     }
-    
 }

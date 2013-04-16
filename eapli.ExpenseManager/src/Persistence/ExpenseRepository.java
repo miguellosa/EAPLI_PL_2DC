@@ -85,13 +85,13 @@ public class ExpenseRepository  implements IExpenseRepository
      * @return expenses filtered by year, month and type, specified by parameter
      */
     public List<Expense> getExpensesTypeByMonth (int year, int month, ExpenseType type){
-        
-        List<Expense> filteredExpenses=new ArrayList<Expense>();
+        List<Expense> filteredExpenses = new ArrayList<Expense>();
         for(int i=0;i<listExpense.size();i++)
         {
-            if(listExpense.get(i).getExptype()==type && listExpense.get(i).getExpenseYear()==year && listExpense.get(i).getExpenseMonth()==month)
+            if(listExpense.get(i).getExptype().getDescription() == type.getDescription() && listExpense.get(i).getExpenseYear()==year && listExpense.get(i).getExpenseMonth()==month)
                 filteredExpenses.add(listExpense.get(i));
         }
+       
         return filteredExpenses;
     }
 }
