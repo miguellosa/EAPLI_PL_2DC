@@ -2,8 +2,10 @@ package Presentation;
 
 import Controllers.BaseController;
 import Controllers.DisplayExpensesController;
+import Model.Expense;
 import eapli.util.Console;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * User interface displaying the available options within "Display Expense"
@@ -46,10 +48,11 @@ public class DisplayExpensesUI extends BaseUI {
                 case 1:
                     option1 = Console.readInteger("Which Year?");
                     option2 = Console.readInteger("Which Month?\n (0-January until 11-December)");
-                    dec.showMonthlyExpenses(option1,option2);
-                    sum = baseCont.getMonthlyExpenses(option2, option1);
                     System.out.println(option1);
-                    System.out.println("Year: " + option1 + "  Month: " + option2);
+                    System.out.println("Year: " + option1 + "  Month: " + (option2+1));
+                    showMonthlyExpenses(option1,option2);
+                    sum = baseCont.getMonthlyExpenses(option2, option1);
+                    
                     System.out.println("Monthly Expense: " + sum);
                     break;
                 case 2:
@@ -73,9 +76,18 @@ public class DisplayExpensesUI extends BaseUI {
         } while(option != 0);
     }
     
-    public void showMonthlyExpenses(String text){ 
-        System.out.println(text);
+       public void showMonthlyExpenses(int option1, int option2){ 
+        DisplayExpensesController dec= new DisplayExpensesController();
+        List<Expense> display;
+        display=dec.showMonthlyExpenses(option1, option2);
+        System.out.println("-------------------------------------------");
+        for (int i = 1; i < display.size(); i++) {
+              System.out.println(display.get(i).toString());
+        }
+        System.out.println("-------------------------------------------");
     }
       
 
 }
+
+    
