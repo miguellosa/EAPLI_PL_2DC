@@ -17,28 +17,24 @@ import java.math.BigDecimal;
 public class DisplayGraphUI extends BaseUI {
     
     public BigDecimal maxSum(List<BigDecimal> sums){
-        BigDecimal max=BigDecimal.ZERO;
+       BigDecimal max = BigDecimal.ZERO;
         
-        for(int i=0;i<sums.size();i++)
-            if(sums.get(i).compareTo(max) > 0)
+       for(int i=0;i<sums.size();i++)
+           if(sums.get(i).compareTo(max) > 0)
                 max=sums.get(i);                
         
-        return max;
+       return max;
     }
     
     private String createLine(BigDecimal coef, BigDecimal sum){
-        
-        String line="";
-       do{
-        
-        //FIXME
-        
-        {
+       String line="";
+       
+       while(sum.compareTo(BigDecimal.ZERO) > 0){
             line += "*";
-            sum.subtract(coef);
-        }
-       }while(sum.compareTo(BigDecimal.ZERO)  <=0);
-        return line;
+            sum = sum.subtract(coef);
+       }
+       
+       return line;
     }
     
     public void displayGraphUI(int month, int year){
@@ -50,16 +46,14 @@ public class DisplayGraphUI extends BaseUI {
         
         String [][] grafico=new String [types.size()][2];
         BigDecimal max=maxSum(sums);
-        BigDecimal coef=max.divide(new BigDecimal(10));
+        BigDecimal coef=max.divide(new BigDecimal(30));
 
         for(int i=0;i<types.size();i++)
         {
             grafico[i][0] = types.get(i).getDescription() + "\t\t\t\t";
             grafico[i][1] = createLine(coef, sums.get(i));
-            System.out.println(sums.get(i));
         }
         
-        System.out.println("arroz");
         printGraph(grafico);
     }
     
