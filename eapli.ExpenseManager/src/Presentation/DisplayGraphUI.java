@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Presentation;
 
 import Controllers.*;
@@ -11,12 +7,23 @@ import java.util.*;
 import java.math.BigDecimal;
 
 /**
- *
- * @author Tiago
+ * Class that will show the graph with monthly expenses in a chart
+ * @author André Silva 1100859
+ * @author Tiago Pacheco 1110333
+ * @version 1.0
  */
 public class DisplayGraphUI extends BaseUI {
     
-    public BigDecimal maxSum(List<BigDecimal> sums){
+    /**
+     * Method that will calculate the max sum of a list of sums
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     * @param sums list of sums
+     * @return return a max of a list of sums
+     */
+    private BigDecimal maxSum(List<BigDecimal> sums){
        BigDecimal max = BigDecimal.ZERO;
         
        for(int i=0;i<sums.size();i++)
@@ -26,6 +33,16 @@ public class DisplayGraphUI extends BaseUI {
        return max;
     }
     
+    /**
+     * Method that will create a line of asterisks based on coefficient of max sum
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     * @param coef coefficient of max sum
+     * @param sum sum of type to be written
+     * @return a line with asterisks
+     */
     private String createLine(BigDecimal coef, BigDecimal sum){
        String line="";
        
@@ -37,7 +54,16 @@ public class DisplayGraphUI extends BaseUI {
        return line;
     }
     
-    public void displayGraphUI(int month, int year){
+    /**
+     * Method that will call the necessary methods to write the graph
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     * @param month month to be queried
+     * @param year year to be queried
+     */
+    private void displayGraphUI(int month, int year){
         ExpenseTypeController typesController = new ExpenseTypeController();
         List<ExpenseType> types = typesController.getRegisterExpenseTypeList();
         
@@ -57,18 +83,39 @@ public class DisplayGraphUI extends BaseUI {
         printGraph(grafico);
     }
     
-
+    /**
+     * Constructor of base controller
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     * @return null
+     */
    @Override
     public BaseController controller(){
         return null;
     }
 
+    /**
+     * Method that will call the necessary methods to write the graph
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     */
     @Override
     public void show() {
         headline();
         mainLoop();
     }
     
+    /**
+     * Method that will write the headline in console
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     */
     @Override
     protected void headline() {
         System.out.println("======================");
@@ -76,6 +123,13 @@ public class DisplayGraphUI extends BaseUI {
         System.out.println("======================\n");
     }
 
+    /**
+     * Method that will write the body in console
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     */
     @Override
     public void mainLoop() {
         
@@ -88,6 +142,14 @@ public class DisplayGraphUI extends BaseUI {
         System.out.println("End of graph!!!");
     }
 
+    /**
+     * Method that will write the graph in the console
+     * @author André Silva 1100859
+     * @author Tiago Pacheco 1110333
+     * @version 1.0
+     * @since 1.0
+     * @param grafico array that will be written 
+    */
     private void printGraph(String[][] grafico) {
         for(int i=0;i<grafico.length;i++){
             System.out.println(grafico[i][0] + "" + grafico[i][1]);
