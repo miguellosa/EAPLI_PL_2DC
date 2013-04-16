@@ -3,6 +3,7 @@ package Presentation;
 import Controllers.BaseController;
 import Controllers.DisplayExpensesController;
 import eapli.util.Console;
+import java.math.BigDecimal;
 
 /**
  * User interface displaying the available options within "Display Expense"
@@ -32,6 +33,8 @@ public class DisplayExpensesUI extends BaseUI {
     public void mainLoop(){
         int option,option1,option2;
         DisplayExpensesController dec= new DisplayExpensesController();
+        BaseController baseCont = new BaseController();
+        BigDecimal sum = BigDecimal.ZERO;
         do{
             
             System.out.println("1. Monthly expenses");
@@ -43,6 +46,10 @@ public class DisplayExpensesUI extends BaseUI {
                     option1 = Console.readInteger("Which Year?");
                     option2 = Console.readInteger("Which Month?\n (0-January until 11-December)");
                     dec.showMonthlyExpenses(option1,option2);
+                    sum = baseCont.getMonthlyExpenses(option2, option1);
+                    System.out.println(option1);
+                    System.out.println("Year: " + option1 + "  Month: " + option2);
+                    System.out.println("Monthly Expense: " + sum);
                     break;
                 case 2:
                     /* replace the following code for appropriate function once it's implemented */
