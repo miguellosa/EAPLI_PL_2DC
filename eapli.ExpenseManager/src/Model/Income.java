@@ -39,6 +39,21 @@ public class Income {
         return incomeDescription;
     }
     
+    public String toStringCSV()
+    {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append(incomeDescription);
+        buffer.append(";");
+        buffer.append(incomeValue);
+        buffer.append(";");
+        buffer.append(incomeType);
+        buffer.append(";");
+        buffer.append(incomeDate);
+      
+        return buffer.toString();
+       
+    }
+    
     public String toStringXML(){
         return "<income\n>"
                 + " <description>"+incomeDescription+"<\\description\n>"

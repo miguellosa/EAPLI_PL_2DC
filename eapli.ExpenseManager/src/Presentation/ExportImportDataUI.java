@@ -56,10 +56,8 @@ public class ExportImportDataUI extends BaseUI {
                     tempListInc = expController.exportIncome(datebegin, datend);
                     
                     ExportCSV exp = new ExportCSV();
-                    exp.exportExpensesIncomesToCSV(tempListExp, tempListInc);
-                    /* replace the following code for appropriate function once it's implemented */
-                    UnavailableFunctionUI un1 = new UnavailableFunctionUI();
-                    un1.mainLoop();
+                    exp.exportExpensesIncomesToCSV(tempListExp, tempListInc,datebegin,datend);
+                    
                     break;
                 case 2:
                     /* replace the following code for appropriate function once it's implemented */

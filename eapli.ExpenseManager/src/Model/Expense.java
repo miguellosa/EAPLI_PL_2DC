@@ -90,6 +90,19 @@ public class Expense {
         return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd;
     }
     
+    public String toStringCSV()
+    {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append(description);
+        buffer.append(";");
+        buffer.append(amount);
+        buffer.append(";");
+        buffer.append(dateOccurd);
+      
+        return buffer.toString();
+       
+    }
+    
      public String toStringXML(){
         return "<expense\n>"
                 + " <description>"+description+"<\\description\n>"
