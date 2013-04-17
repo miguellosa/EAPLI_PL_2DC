@@ -8,6 +8,7 @@ import Model.Expense;
 import Model.Income;
 import Controllers.ExportController;
 import ImportsExports.ExportCSV;
+import ImportsExports.ExportXML;
 /**
  * User interface displaying the available options within "ExportImportDataUI"
  * @author João Carreira
@@ -63,6 +64,17 @@ public class ExportImportDataUI extends BaseUI {
                     
                     break;
                 case 2:
+                    List<Expense> tempListExpXml = new ArrayList();
+                    List<Income> tempListIncXml = new ArrayList();
+                    Date datebeginXml = Console.readDate("Beginning Date: ");
+                    Date datendXml = Console.readDate("End Date: ");
+                    
+                    ExportController expControllerXml = new ExportController();
+                    tempListExpXml = expControllerXml.exportExpenses(datebeginXml, datendXml);
+                    tempListIncXml = expControllerXml.exportIncome(datebeginXml, datendXml);
+                    
+                    ExportXML xml = new ExportXML();
+                    xml.exportExpensesIncomesToXML(tempListExpXml, tempListIncXml);
                     /* replace the following code for appropriate function once it's implemented */
                     UnavailableFunctionUI un2 = new UnavailableFunctionUI();
                     un2.mainLoop();
