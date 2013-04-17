@@ -24,7 +24,7 @@ public class ExportImportDataUI extends BaseUI {
     @Override
     public void show() {
         headline();
-        System.out.println(controller.showWeeklyExpenses()+"            |||            "+controller.getCurrentMonthExpenses());
+        System.out.println("Semana: "+controller.showWeeklyExpenses()+"            |||            "+"Mês"+controller.getCurrentMonthExpenses());
         mainLoop();
     }
     
