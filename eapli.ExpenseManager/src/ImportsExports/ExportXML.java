@@ -28,21 +28,21 @@ public class ExportXML {
             //Código de exportação de xml
             writer.write("<?xml version=\"1.0\"?>");
             writer.write("<Items>");
-            writer.write("<Expenses>");
+            writer.write("\t<Expenses>");
             
             for (int i = 0; i < listExp.size(); i++) {
                 writer.write(listExp.get(i).toStringXML());
             }
             //Escrita das listas com gastos e rendimentos
 
-            writer.write("<\\Expenses>");
-            writer.write("<Incomes>");
+            writer.write("\t<\\Expenses>");
+            writer.write("\t<Incomes>");
          
             for (int i = 0; i < listInc.size(); i++) {
                 writer.write(listInc.get(i).toStringXML());
             }
             
-            writer.write("<\\Incomes>");
+            writer.write("\t<\\Incomes>");
             writer.write("<\\Items>");
             
             writer.close();

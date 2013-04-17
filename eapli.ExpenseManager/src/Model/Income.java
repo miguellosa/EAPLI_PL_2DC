@@ -55,11 +55,11 @@ public class Income {
     }
     
     public String toStringXML(){
-        return "<income\n>"
-                + " <description>"+incomeDescription+"<\\description\n>"
-                + " <date>"+incomeDate+"<\\date\n>"
-                + " <amount> "+incomeValue+"<\\amount\n>"
-                + " <type>"+incomeType+"<\\type\n>"
-                + "<\\income>";
+        return "\t\t<income\n>"
+                + "\t\t\t<description>"+incomeDescription+"<\\description\n>"
+                + "\t\t\t<date>"+incomeDate+"<\\date\n>"
+                + "\t\t\t<amount> "+incomeValue+"<\\amount\n>"
+                + "\t\t\t<type>"+incomeType+"<\\type\n>"
+                + "\t\t<\\income>";
     }
 }

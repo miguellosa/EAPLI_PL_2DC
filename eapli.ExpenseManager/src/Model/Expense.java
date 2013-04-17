@@ -112,12 +112,12 @@ public class Expense {
     }
     
      public String toStringXML(){
-        return "<expense\n>"
-                + " <description>"+description+"<\\description\n>"
-                + " <date>"+dateOccurd+"<\\date\n>"
-                + " <amount> "+amount+"<\\amount\n>"
-                + " <type>"+exptype+"<\\type\n>"
-                + "<\\expense>";
+        return "\t\t<expense\n>"
+                + "\t\t\t<description>"+description+"<\\description\n>"
+                + "\t\t\t<date>"+dateOccurd+"<\\date\n>"
+                + "\t\t\t<amount> "+amount+"<\\amount\n>"
+                + "\t\t\t<type>"+exptype+"<\\type\n>"
+                + "\t\t<\\expense>";
     }
 
     public ExpenseType getExptype() {
