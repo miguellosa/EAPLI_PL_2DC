@@ -1,6 +1,7 @@
 package Model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Date;
 
 
@@ -55,11 +56,12 @@ public class Income {
     }
     
     public String toStringXML(){
+      String b=incomeValue.setScale(2,RoundingMode.UP).toString();
         return "\t\t<income\n>"
-                + "\t\t\t<description>"+incomeDescription+"<\\description\n>"
-                + "\t\t\t<date>"+incomeDate+"<\\date\n>"
-                + "\t\t\t<amount> "+incomeValue+"<\\amount\n>"
-                + "\t\t\t<type>"+incomeType+"<\\type\n>"
-                + "\t\t<\\income>";
+                + "\t\t\t<description>"+incomeDescription+"<\\description>\n"
+                + "\t\t\t<date>"+incomeDate+"<\\date>\n"
+                + "\t\t\t<amount> "+b+"<\\amount>\n"
+                + "\t\t\t<type>"+incomeType+"<\\type>\n"
+                + "\t\t<\\income>\n";
     }
 }

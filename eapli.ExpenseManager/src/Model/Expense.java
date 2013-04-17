@@ -6,7 +6,7 @@ package Model;
 
 import eapli.util.DateTime;
 import java.math.BigDecimal;
-import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Date;
 public class Expense {
     
@@ -116,12 +116,13 @@ public class Expense {
     }
     
      public String toStringXML(){
-        return "\t\t<expense\n>"
-                + "\t\t\t<description>"+description+"<\\description\n>"
-                + "\t\t\t<date>"+dateOccurd+"<\\date\n>"
-                + "\t\t\t<amount> "+amount+"<\\amount\n>"
-                + "\t\t\t<type>"+exptype+"<\\type\n>"
-                + "\t\t<\\expense>";
+        String b=amount.setScale(2,RoundingMode.UP).toString();
+        return "\t\t<expense>\n"
+                + "\t\t\t<description>"+description+"<\\description>\n"
+                + "\t\t\t<date>"+dateOccurd+"<\\date>\n"
+                + "\t\t\t<amount> "+b+"<\\amount>\n"
+                + "\t\t\t<type>"+exptype+"<\\type>\n"
+                + "\t\t<\\expense>\n";
     }
      
      public String toStringCSV()
