@@ -3,7 +3,6 @@ package Presentation;
 
 import Controllers.BaseController;
 import eapli.util.Console;
-import java.math.BigDecimal;
 
 
 public class MainMenu extends BaseUI {
@@ -18,7 +17,7 @@ public class MainMenu extends BaseUI {
     @Override
     public void show() {
         headline();
-       System.out.println("Semana: "+controller.showWeeklyExpenses()+"            |||            "+"Mês"+controller.getCurrentMonthExpenses());
+       System.out.println("Semana: "+controller.showWeeklyExpenses()+"            |||            "+"Mês: "+controller.getCurrentMonthExpenses());
        mainLoop();
     }
     
