@@ -1,0 +1,35 @@
+User->MainMenu: display Expenses By Type
+
+MainMenu->DisplayExpensesByTypeUI: displayExpensesByTypeUI()
+
+DisplayExpensesByTypeUI->DisplayGraphController: getExpenseType()
+
+DisplayGraphController->TypeRepository: getExpenseType()
+
+TypeRepository-->DisplayGraphController: return types
+
+DisplayGraphController-->DisplayExpensesByTypeUI: return types
+
+DisplayExpensesByTypeUI->DisplayGraphController: getSumByType()
+
+loop i<types.size()
+
+DisplayGraphController->ExpensesRecord:
+
+DisplayGraphController->ExpenseRepository: getExpenseTypeByMonth(month, year, type)
+
+ExpenseRepository-->DisplayGraphController: return expenses
+
+DisplayGraphController->ExpensesRecord: getSumExpenses(expenses)
+
+ExpensesRecord->ExpensesRecord: sum
+
+ExpensesRecord--> DisplayGraphController: return sum
+
+DisplayGraphController->DisplayGraphController: array.add()
+
+end
+
+DisplayGraphController-->DisplayExpensesByTypeUI: return array
+
+DisplayExpensesByTypeUI->DisplayExpensesByTypeUI: show()
