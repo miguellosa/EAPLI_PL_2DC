@@ -44,9 +44,9 @@ public class Income {
         StringBuilder buffer = new StringBuilder();
         buffer.append(incomeDescription);
         buffer.append(";");
-        buffer.append(incomeValue);
+        buffer.append(incomeValue.floatValue());
         buffer.append(";");
-        buffer.append(incomeType);
+        buffer.append(incomeType.getDescription());
         buffer.append(";");
         buffer.append(incomeDate);
       

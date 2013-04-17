@@ -6,6 +6,7 @@ package Model;
 
 import eapli.util.DateTime;
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.Date;
 public class Expense {
     
@@ -105,10 +106,13 @@ public class Expense {
         return dateOccurd;
     }
 
+     public ExpenseType getExptype() {
+        return exptype;
+    }
       
       
     public String toString(){
-        return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd;
+        return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd + "Expense Type: " +exptype;
     }
     
      public String toStringXML(){
@@ -125,19 +129,17 @@ public class Expense {
         StringBuilder buffer = new StringBuilder();
         buffer.append(description);
         buffer.append(";");
-        buffer.append(amount);
+        buffer.append(amount.floatValue());
         buffer.append(";");
         buffer.append(dateOccurd);
         buffer.append(";");
-        buffer.append(exptype);
+        buffer.append(exptype.getDescription());
         
       
         return buffer.toString();
        
     }
 
-    public ExpenseType getExptype() {
-        return exptype;
-    }
+   
    
 }
