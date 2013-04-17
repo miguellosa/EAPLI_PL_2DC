@@ -6,6 +6,7 @@ package Model;
 
 import eapli.util.DateTime;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Date;
 public class Expense {
     
@@ -105,19 +106,23 @@ public class Expense {
         return dateOccurd;
     }
 
+     public ExpenseType getExptype() {
+        return exptype;
+    }
       
       
     public String toString(){
-        return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd;
+        return "Description: " + description+ " Amount "+amount+" Date: "+ dateOccurd + "Expense Type: " +exptype;
     }
     
      public String toStringXML(){
-        return "\t\t<expense\n>"
-                + "\t\t\t<description>"+description+"<\\description\n>"
-                + "\t\t\t<date>"+dateOccurd+"<\\date\n>"
-                + "\t\t\t<amount> "+amount+"<\\amount\n>"
-                + "\t\t\t<type>"+exptype+"<\\type\n>"
-                + "\t\t<\\expense>";
+        String b=amount.setScale(2,RoundingMode.UP).toString();
+        return "\t\t<expense>\n"
+                + "\t\t\t<description>"+description+"<\\description>\n"
+                + "\t\t\t<date>"+dateOccurd+"<\\date>\n"
+                + "\t\t\t<amount> "+b+"<\\amount>\n"
+                + "\t\t\t<type>"+exptype+"<\\type>\n"
+                + "\t\t<\\expense>\n";
     }
      
      public String toStringCSV()
@@ -125,19 +130,17 @@ public class Expense {
         StringBuilder buffer = new StringBuilder();
         buffer.append(description);
         buffer.append(";");
-        buffer.append(amount);
+        buffer.append(amount.floatValue());
         buffer.append(";");
         buffer.append(dateOccurd);
         buffer.append(";");
-        buffer.append(exptype);
+        buffer.append(exptype.getDescription());
         
       
         return buffer.toString();
        
     }
 
-    public ExpenseType getExptype() {
-        return exptype;
-    }
+   
    
 }

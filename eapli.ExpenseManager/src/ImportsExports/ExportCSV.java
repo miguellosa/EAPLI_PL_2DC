@@ -18,13 +18,17 @@ public class ExportCSV {
             OutputStream outputStream = new FileOutputStream("ExpensesControler.csv");
             Writer writer = new OutputStreamWriter(outputStream);
 
+            if(listExp.isEmpty() && listInc.isEmpty())
+            {
+                System.out.println("There are no Expenses or Incomes between the selected dates\n");
+            } else {
             //Código de exportação de csv
             writer.write("List of expenses and incomes between " +db.toString()+ " and " +de.toString());
             writer.write("\n\nExpenses");
             writer.write("\n");
-            writer.write("Description ; Amount ; Date \n");
+            writer.write("Description ; Amount ; Date ; Expense Type \n");
             for (int i = 0; i < listExp.size(); i++) {
-                writer.write(listExp.get(i).toString());
+                writer.write(listExp.get(i).toStringCSV());
                 writer.write("\n");
             }
             //Escrita das listas com gastos e rendimentos
@@ -40,9 +44,10 @@ public class ExportCSV {
                 writer.write("\n");
             }
             
+                System.out.println("\n Expenses and Incomes exported to CSV\n");
             writer.close();
             outputStream.close();
-            
+            }
         } catch (Exception ex) {
             ex.getMessage();
         }
