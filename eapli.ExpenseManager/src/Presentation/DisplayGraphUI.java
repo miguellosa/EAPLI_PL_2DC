@@ -23,7 +23,7 @@ public class DisplayGraphUI extends BaseUI {
      * @param sums list of sums
      * @return return a max of a list of sums
      */
-    private BigDecimal maxSum(List<BigDecimal> sums){
+    protected BigDecimal maxSum(List<BigDecimal> sums){
        BigDecimal max = BigDecimal.ZERO;
         
        for(int i=0;i<sums.size();i++)
@@ -43,7 +43,7 @@ public class DisplayGraphUI extends BaseUI {
      * @param sum sum of type to be written
      * @return a line with asterisks
      */
-    private String createLine(BigDecimal coef, BigDecimal sum){
+    protected String createLine(BigDecimal coef, BigDecimal sum){
        String line="";
        
        while(sum.compareTo(BigDecimal.ZERO) > 0){
@@ -63,7 +63,7 @@ public class DisplayGraphUI extends BaseUI {
      * @param month month to be queried
      * @param year year to be queried
      */
-    private void displayGraphUI(int month, int year){
+    protected void displayGraphUI(int month, int year){
         ExpenseTypeController typesController = new ExpenseTypeController();
         List<ExpenseType> types = typesController.getRegisterExpenseTypeList();
         
@@ -154,7 +154,7 @@ public class DisplayGraphUI extends BaseUI {
      * @since 1.0
      * @param grafico array that will be written 
     */
-    private void printGraph(String[][] grafico) {
+    protected void printGraph(String[][] grafico) {
         for(int i=0;i<grafico.length;i++){
             System.out.println(grafico[i][0] + "" + grafico[i][1]);
         }
