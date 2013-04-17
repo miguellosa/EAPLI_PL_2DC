@@ -50,7 +50,7 @@ public class DisplayExpensesUI extends BaseUI {
             switch(option){
                 case 1:
                     option1 = Console.readInteger("Which Year?");
-                    option2 = Console.readInteger("Which Month?\n (0-January until 11-December)");
+                    option2 = Console.readInteger("Which Month(0-January until 11-December)?");
                     System.out.println(option1);
                     System.out.println("Year: " + option1 + "  Month: " + (option2+1));
                     showMonthlyExpenses(option1,option2);
@@ -65,7 +65,7 @@ public class DisplayExpensesUI extends BaseUI {
                     break;
                 case 3:
                     option1 = Console.readInteger("Which Year?");
-                    option2 = Console.readInteger("Which Month?\n (0-January until 11-December)");
+                    option2 = Console.readInteger("Which Month(0-January until 11-December)?");
                     sum = baseCont.getMonthlyExpenses(option2, option1);
                     System.out.println(option1);
                     System.out.println("Year: " + option1 + "  Month: " + option2);
