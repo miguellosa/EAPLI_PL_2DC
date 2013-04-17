@@ -28,7 +28,7 @@ public class ExportCSV {
             writer.write("\n");
             writer.write("Description ; Amount ; Date ; Expense Type \n");
             for (int i = 0; i < listExp.size(); i++) {
-                writer.write(listExp.get(i).toString());
+                writer.write(listExp.get(i).toStringCSV());
                 writer.write("\n");
             }
             //Escrita das listas com gastos e rendimentos
