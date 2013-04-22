@@ -6,6 +6,7 @@ package eapli.util;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -73,6 +74,21 @@ public class DateTimeTest
         Date date = DateTime.newDate(2001, 1, 1);
         int testDate = DateTime.weekNumber(date);
         assertEquals(testDate, 1);
+    }
+    
+    
+    /**
+     * Test of firstDateofWeek(int year, int week)
+     */
+    @Test
+    public void testFirstDateOfWeek()
+    {
+        /* setting a date as week 1 of 2000 */
+        Calendar date = new GregorianCalendar();
+        date.clear();
+        date = DateTime.firstDateOfWeek(2000, 1);
+        /* test will verify if first date of week is January 1st */
+        assertEquals(date.getFirstDayOfWeek(), 1);   
     }
     
 }
