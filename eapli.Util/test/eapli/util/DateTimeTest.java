@@ -91,4 +91,18 @@ public class DateTimeTest
         assertEquals(date.getFirstDayOfWeek(), 1);   
     }
     
+    
+    /**
+     * Test of lastDateofWeek(int year, int week)
+     */
+    @Test
+    public void testLastDateOfWeek()
+    {
+        /* setting a date as week 2 of 2000 */
+        Calendar date = new GregorianCalendar();
+        date.clear();
+        date = DateTime.lastDateOfWeek(2000, 2);
+        /* test will verify if last date of week is January 8th */
+        assertEquals(date.getFirstDayOfWeek() + 7, 8);   
+    }
 }
