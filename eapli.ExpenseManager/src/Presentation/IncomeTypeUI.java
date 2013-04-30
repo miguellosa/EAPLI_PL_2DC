@@ -14,14 +14,17 @@ import eapli.util.Console;
  */
 public class IncomeTypeUI extends BaseUI {
     
+     private BaseController controller = new BaseController(); 
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     @Override
     public void show() {
         headline();
+        System.out.println("Semana: "+controller.showWeeklyExpenses()+"            |||            "+"Mês: "+controller.getCurrentMonthExpenses());
         mainLoop();
     }
     

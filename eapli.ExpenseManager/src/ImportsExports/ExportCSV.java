@@ -12,34 +12,42 @@ import Model.Income;
  */
 public class ExportCSV {
 
-    public void exportExpensesIncomesToCSV(List<Expense> listExp, List<Income> listInc) {
+    public void exportExpensesIncomesToCSV(List<Expense> listExp, List<Income> listInc, Date db, Date de) {
 
         try {
             OutputStream outputStream = new FileOutputStream("ExpensesControler.csv");
             Writer writer = new OutputStreamWriter(outputStream);
 
+            if(listExp.isEmpty() && listInc.isEmpty())
+            {
+                System.out.println("There are no Expenses or Incomes between the selected dates\n");
+            } else {
             //Código de exportação de csv
-            writer.write("List of expenses and incomes between ...");
-            writer.write("Expenses");
+            writer.write("List of expenses and incomes between " +db.toString()+ " and " +de.toString());
+            writer.write("\n\nExpenses");
             writer.write("\n");
+            writer.write("Description ; Amount ; Date ; Expense Type \n");
             for (int i = 0; i < listExp.size(); i++) {
-                writer.write(listExp.get(i).toString());
+                writer.write(listExp.get(i).toStringCSV());
                 writer.write("\n");
             }
             //Escrita das listas com gastos e rendimentos
 
+            writer.write("\n\n");
+            writer.write("Incomes\n\n");
+            writer.write("Description ; Amount ; Income Type ; Date \n");
             writer.write("\n");
-            writer.write("Incomes");
-            writer.write("\n");
-
+            
+           
             for (int i = 0; i < listInc.size(); i++) {
-                writer.write(listInc.get(i).toString());
+                writer.write(listInc.get(i).toStringCSV());
                 writer.write("\n");
             }
             
+                System.out.println("\n Expenses and Incomes exported to CSV\n");
             writer.close();
             outputStream.close();
-            
+            }
         } catch (Exception ex) {
             ex.getMessage();
         }

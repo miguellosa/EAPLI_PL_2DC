@@ -1,0 +1,21 @@
+List of expenses and incomes between Fri Feb 01 00:00:00 GMT 2013 and Thu Apr 04 00:00:00 BST 2013
+
+Expenses
+Description ; Amount ; Date ; Expense Type 
+Autocarro;2.4;Fri Mar 04 14:13:16 GMT 113;Transportes
+Almoço;12.4;Sat Mar 05 14:13:16 GMT 113;Alimentação
+Sapatilhas;123.4;Fri Mar 04 14:13:16 GMT 113;Vestuário
+Cinema;5.0;Fri Mar 04 14:13:16 GMT 113;Lazer
+Futebol;5.0;Fri Mar 04 14:13:16 GMT 113;Lazer
+Flores;5.0;Fri Mar 04 14:13:16 GMT 113;Lazer
+Café;5.0;Fri Mar 04 14:13:16 GMT 113;Alimentação
+Roupa;5.0;Fri Mar 04 14:13:16 GMT 113;Vestuário
+Lavandaria;5.0;Fri Mar 04 14:13:16 GMT 113;Vestuário
+Roupa2012;5.0;Sat Apr 03 14:13:16 GMT 112;Vestuário
+Lavandaria2012;5.0;Thu Mar 04 14:13:16 GMT 112;Vestuário
+
+
+Incomes
+
+Description ; Amount ; Income Type ; Date 
+

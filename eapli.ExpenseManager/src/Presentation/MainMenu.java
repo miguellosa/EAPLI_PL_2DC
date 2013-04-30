@@ -7,15 +7,18 @@ import eapli.util.Console;
 
 public class MainMenu extends BaseUI {
     
+    private BaseController controller = new BaseController();
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     @Override
     public void show() {
         headline();
-        mainLoop();
+       System.out.println("Semana: "+controller.showWeeklyExpenses()+"            |||            "+"Mês: "+controller.getCurrentMonthExpenses());
+       mainLoop();
     }
     
     @Override

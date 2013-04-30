@@ -66,7 +66,21 @@ public class Expense {
         return DateTime.weekNumber(DateTime.dateToCalendar(dateOccurd));
     }
     
-    
+     /**
+     * @return a boolean which indicates if an Expense belongs to a certain month and year or not.
+     */
+    public boolean compareYearMonth(int y,int m)
+    {
+        if((y==getExpenseYear()) && (m==getExpenseMonth()))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     /**
      * @return the month of an expense
      */
@@ -91,14 +105,29 @@ public class Expense {
     }
     
      public String toStringXML(){
-        return "<expense\n>"
-                + " <description>"+description+"<\\description\n>"
-                + " <date>"+dateOccurd+"<\\date\n>"
-                + " <amount> "+amount+"<\\amount\n>"
-                + " <type>"+exptype+"<\\type\n>"
-                + "<\\expense>";
+        return "\t\t<expense\n>"
+                + "\t\t\t<description>"+description+"<\\description\n>"
+                + "\t\t\t<date>"+dateOccurd+"<\\date\n>"
+                + "\t\t\t<amount> "+amount+"<\\amount\n>"
+                + "\t\t\t<type>"+exptype+"<\\type\n>"
+                + "\t\t<\\expense>";
     }
-
+    
+    public String toStringCSV()
+    {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append(description);
+        buffer.append(";");
+        buffer.append(dateOccurd);
+        buffer.append(";");
+        buffer.append(amount.floatValue());
+        buffer.append(";");
+        buffer.append(exptype.toString());
+      
+        return buffer.toString();
+       
+    }
+  
     public ExpenseType getExptype() {
         return exptype;
     }

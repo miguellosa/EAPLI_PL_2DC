@@ -1,6 +1,7 @@
 package Model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Date;
 
 
@@ -39,12 +40,28 @@ public class Income {
         return incomeDescription;
     }
     
+    public String toStringCSV()
+    {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append(incomeDescription);
+        buffer.append(";");
+        buffer.append(incomeValue.floatValue());
+        buffer.append(";");
+        buffer.append(incomeType.getDescription());
+        buffer.append(";");
+        buffer.append(incomeDate);
+      
+        return buffer.toString();
+       
+    }
+    
     public String toStringXML(){
-        return "<income\n>"
-                + " <description>"+incomeDescription+"<\\description\n>"
-                + " <date>"+incomeDate+"<\\date\n>"
-                + " <amount> "+incomeValue+"<\\amount\n>"
-                + " <type>"+incomeType+"<\\type\n>"
-                + "<\\income>";
+      String b=incomeValue.setScale(2,RoundingMode.UP).toString();
+        return "\t\t<income\n>"
+                + "\t\t\t<description>"+incomeDescription+"<\\description>\n"
+                + "\t\t\t<date>"+incomeDate+"<\\date>\n"
+                + "\t\t\t<amount> "+b+"<\\amount>\n"
+                + "\t\t\t<type>"+incomeType+"<\\type>\n"
+                + "\t\t<\\income>\n";
     }
 }

@@ -25,14 +25,17 @@ import java.util.List;
  */
 class ExpenseRegisterUI extends BaseUI {
     
+    private BaseController controller = new BaseController();
+    
     @Override
     public BaseController controller(){
-        return null;
+        return controller;
     }
 
     @Override
     public void show() {
         headline();
+        System.out.println("Semana: "+controller.showWeeklyExpenses()+"            |||            "+"Mês: "+controller.getCurrentMonthExpenses());
         mainLoop();
     }
     
