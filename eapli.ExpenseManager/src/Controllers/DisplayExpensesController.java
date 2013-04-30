@@ -25,7 +25,7 @@ public class DisplayExpensesController {
         List<Expense> display=new ArrayList<Expense>();
         for (int i = 0; i < typerepo.size(); i++) { //List of ExpenseTypes
             for (int j = 0; j <repo.size(); j++) { //List of Expenses
-                if(repo.get(j).compareyear(year) && repo.get(j).comparemonth(month+1)){ 
+                if(repo.get(j).compareYearMonth(year,month+1)){ 
                      if( typerepo.get(i).getDescription().equals(repo.get(j).getExptype().getDescription()))
                      {
                         display.add(repo.get(j));
