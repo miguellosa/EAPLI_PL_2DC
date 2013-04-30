@@ -112,7 +112,22 @@ public class Expense {
                 + "\t\t\t<type>"+exptype+"<\\type\n>"
                 + "\t\t<\\expense>";
     }
-
+    
+    public String toStringCSV()
+    {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append(description);
+        buffer.append(";");
+        buffer.append(dateOccurd);
+        buffer.append(";");
+        buffer.append(amount.floatValue());
+        buffer.append(";");
+        buffer.append(exptype.toString());
+      
+        return buffer.toString();
+       
+    }
+  
     public ExpenseType getExptype() {
         return exptype;
     }
