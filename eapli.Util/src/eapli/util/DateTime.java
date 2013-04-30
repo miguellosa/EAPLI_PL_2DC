@@ -92,7 +92,7 @@ public /* static */ class DateTime {
 
     public static Date newDate(int year, int month, int day) {
         Calendar c = Calendar.getInstance();
-        c.set(year-1900, month - 1, day);
+        c.set(year-1900, month - 1, day,0,0,0);
         return c.getTime();
     }
 
