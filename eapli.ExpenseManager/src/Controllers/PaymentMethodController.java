@@ -8,7 +8,8 @@ package Controllers;
 import Model.*;
 import Persistence.IExpenseTypeRepository;
 import Persistence.IPaymentMethodRepository;
-import Persistence.PaymentMethodRepository;
+import Persistence.inmemory.PaymentMethodRepository;
+
 import java.math.BigDecimal;
 import java.util.List;
 

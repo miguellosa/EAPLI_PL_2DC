@@ -1,0 +1,31 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Persistence.inmemory;
+
+import java.util.ArrayList;
+import java.util.List;
+import Model.*;
+import Persistence.IPaymentMethodRepository;
+/**
+ *
+ * @author Miguel
+ */
+public class PaymentMethodRepository implements IPaymentMethodRepository{
+    
+    private static List<PaymentMethod> listPaymentMethod= new ArrayList<PaymentMethod>();
+
+    public PaymentMethodRepository() {}
+    
+    public void save(PaymentMethod pay)
+    {
+        if (pay==null) throw new IllegalArgumentException();
+        listPaymentMethod.add(pay);
+      
+    }
+    
+    public List<PaymentMethod> getPaymentMehtodList(){
+        return listPaymentMethod;
+    }
+}

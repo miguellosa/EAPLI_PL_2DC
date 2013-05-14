@@ -5,8 +5,8 @@
 package Controllers;
 
 import Model.IncomeType;
-import Persistence.IncomeTypeRepository;
 import Persistence.IIncomeTypeRepository;
+import Persistence.inmemory.IncomeTypeRepository;
 
 /**
  *

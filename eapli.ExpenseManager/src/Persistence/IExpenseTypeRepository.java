@@ -4,14 +4,18 @@
  */
 package Persistence;
 
-import Model.ExpenseType;
 import java.util.List;
 
+import Model.ExpenseType;
+
 /**
- *
+ * 
  * @author i100447
  */
 public interface IExpenseTypeRepository {
-     void save(ExpenseType type);
-     List<ExpenseType> getTypeRep();
+    ExpenseType save(ExpenseType type);
+
+    ExpenseType findForName(String key);
+
+    List<ExpenseType> getTypeRep();
 }

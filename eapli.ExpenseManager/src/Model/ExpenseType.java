@@ -1,26 +1,35 @@
-
 package Model;
 
+import java.io.Serializable;
+
+import javax.persistence.*;
+
 /**
- *
+ * 
  * @author i110557
  */
-public class ExpenseType {
-    
+@Entity
+public class ExpenseType implements Serializable {
+    @Id
+    @GeneratedValue
+    private long Id;
+
     private String description;
-    
-    protected ExpenseType() {}
-    
-    public ExpenseType(String description){
-        
-        if(description==null){
-            throw new IllegalArgumentException();
-        }    
-        this.description=description;
+    private String shortname;
+
+    protected ExpenseType() {
+    }
+
+    public ExpenseType(String description, String shortname) {
+
+	if (description == null || shortname == null)
+	    throw new IllegalArgumentException();
+	this.description = description;
+	this.shortname = shortname;
     }
 
     public String getDescription() {
-        return description;
+	return description;
     }
-    
+
 }

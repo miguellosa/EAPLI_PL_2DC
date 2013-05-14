@@ -4,46 +4,47 @@
  */
 package Presentation;
 
-import Controllers.BaseController;
-import Controllers.ExpenseTypeController;
+import Controllers.*;
 import eapli.util.Console;
 
 /**
- *
+ * 
  * @author Magano
  */
 class ExpenseTypeUI extends BaseUI {
-    
-    private BaseController controller = new BaseController();
-    
+
+    private final BaseController controller = new BaseController();
+
     @Override
-    public BaseController controller(){
-        return controller;
+    public BaseController controller() {
+	return controller;
     }
 
     @Override
     public void show() {
-        headline();
-        System.out.println("Semana: "+controller.showWeeklyExpenses()+"            |||            "+"Mês: "+controller.getCurrentMonthExpenses());
-        mainLoop();
+	headline();
+	System.out.println("Semana: " + controller.showWeeklyExpenses()
+		+ "            |||            " + "Mês: "
+		+ controller.getCurrentMonthExpenses());
+	mainLoop();
     }
-    
+
     @Override
     protected void headline() {
-        System.out.println("======================");
-        System.out.println("  Register an expense type  ");
-        System.out.println("======================\n");
+	System.out.println("======================");
+	System.out.println("  Register an expense type  ");
+	System.out.println("======================\n");
     }
 
     @Override
     public void mainLoop() {
-        
-        
-        String desc  = Console.readLine("Description:");
-             
-        ExpenseTypeController controller = new ExpenseTypeController();
-        controller.RegisterExpenseType(desc);
-        
-        System.out.println("Expense type recorded.");
+
+	String shortname = Console.readLine("shorname?");
+	String desc = Console.readLine("Description:");
+
+	ExpenseTypeController controller = new ExpenseTypeController();
+	controller.RegisterExpenseType(desc, shortname);
+
+	System.out.println("Expense type recorded.");
     }
 }

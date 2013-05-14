@@ -2,7 +2,8 @@ package Controllers;
 
 import Model.Income;
 import Model.IncomeType;
-import Persistence.IncomeRepository;
+import Persistence.inmemory.IncomeRepository;
+
 import java.math.BigDecimal;
 import java.util.Date;
 

@@ -8,7 +8,7 @@ package eapli.bootstrap;
 import Model.PaymentMethodCash;
 import Model.PaymentMethodCheck;
 import Model.PaymentMethodCreditCard;
-import Persistence.PaymentMethodRepository;
+import Persistence.inmemory.PaymentMethodRepository;
 
 /**
  *

@@ -3,7 +3,7 @@ package Presentation;
 import Controllers.BaseController;
 import Controllers.IncomeRegisterController;
 import Model.IncomeType;
-import Persistence.IncomeTypeRepository;
+import Persistence.inmemory.IncomeTypeRepository;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.Date;

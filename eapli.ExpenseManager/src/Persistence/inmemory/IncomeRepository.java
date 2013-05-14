@@ -1,7 +1,9 @@
-package Persistence;
+package Persistence.inmemory;
 
 import Model.Expense;
 import Model.Income;
+import Persistence.IIncomeRepository;
+
 import java.util.ArrayList;
 import java.util.List;
 

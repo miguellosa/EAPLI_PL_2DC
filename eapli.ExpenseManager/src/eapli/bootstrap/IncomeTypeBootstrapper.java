@@ -1,7 +1,7 @@
 package eapli.bootstrap;
 
 import Model.IncomeType;
-import Persistence.IncomeTypeRepository;
+import Persistence.inmemory.IncomeTypeRepository;
 
 
 public class IncomeTypeBootstrapper {

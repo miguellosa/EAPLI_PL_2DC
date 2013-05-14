@@ -14,6 +14,7 @@ import Model.PaymentMethod;
 import java.math.BigDecimal;
 import java.util.Date;
 import Persistence.*;
+import Persistence.inmemory.ExpenseRepository;
 /**
  *
  * @author Paulo Gandra Sousa
