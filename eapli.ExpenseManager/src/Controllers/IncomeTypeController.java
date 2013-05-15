@@ -15,8 +15,8 @@ import Persistence.inmemory.IncomeTypeRepository;
 public class IncomeTypeController {
     public IncomeTypeController() {}
 
-    public void RegisterIncomeType(String description) {
-        IncomeType incomeType = new IncomeType(description);
+    public void RegisterIncomeType(String shortName, String description) {
+        IncomeType incomeType = new IncomeType(shortName, description);
         IIncomeTypeRepository repo = new IncomeTypeRepository();
         repo.save(incomeType);
     }

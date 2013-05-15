@@ -38,10 +38,12 @@ public class IncomeTypeUI extends BaseUI {
     @Override
     public void mainLoop() {
         
+        String shortName = Console.readLine("Short Name: ");
         String description  = Console.readLine("Description:");
+        
              
         IncomeTypeController incController = new IncomeTypeController();
-        incController.RegisterIncomeType(description);
+        incController.RegisterIncomeType(shortName, description);
         
         System.out.println("Income type recorded.");
     }
