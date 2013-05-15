@@ -9,17 +9,22 @@ import javax.persistence.*;
  * @author i110557
  */
 @Entity
-public class ExpenseType implements Serializable {
+public class ExpenseType extends MovementType {
+    /*
     @Id
     @GeneratedValue
     private long Id;
 
     private String description;
     private String shortname;
-
+*/
     protected ExpenseType() {
     }
-
+    
+     public ExpenseType(String shortName, String description) {
+            super (shortName, description);
+    }
+/*
     public ExpenseType(String description, String shortname) {
 
 	if (description == null || shortname == null)
@@ -31,5 +36,5 @@ public class ExpenseType implements Serializable {
     public String getDescription() {
 	return description;
     }
-
+*/
 }
