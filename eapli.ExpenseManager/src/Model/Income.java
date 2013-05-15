@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 import java.util.Date;
 
 
-public class Income {
+public class Income extends Movement{
     
     private IncomeType incomeType;
     private BigDecimal incomeValue;
