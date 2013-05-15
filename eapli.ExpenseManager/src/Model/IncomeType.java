@@ -8,17 +8,14 @@ package Model;
  *
  * @author i090566
  */
-public class IncomeType {
-    private String description;
+public class IncomeType extends MovementType{
 	
-    public IncomeType(String d) {
-            description = d;
+    public IncomeType(){}
+    
+    public IncomeType(String shortName, String description) {
+            super (shortName, description);
     }
 
-
-    public String getDescription() {
-        return description;
-    }
 
     public void setDescription(String description) {
         this.description = description;
