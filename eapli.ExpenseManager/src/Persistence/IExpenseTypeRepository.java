@@ -13,6 +13,7 @@ import Model.ExpenseType;
  * @author i100447
  */
 public interface IExpenseTypeRepository {
+    
     ExpenseType save(ExpenseType expenseType);
 
     ExpenseType findForName(String key);
