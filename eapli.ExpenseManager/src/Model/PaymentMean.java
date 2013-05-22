@@ -5,8 +5,8 @@
 package Model;
 
 import Persistence.PersistenceFactory;
+import Persistence.jpa.PaymentMeanRepositoryImpl;
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +20,7 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class PaymentMean implements ActiveRecord, Serializable {
+public abstract class PaymentMean implements Serializable {
     
     private static final long serialVersionUID = 1L;
     @Id
@@ -29,15 +29,15 @@ public abstract class PaymentMean implements ActiveRecord, Serializable {
     
     public PaymentMean(){}
     
-    @Override
+    /*@Override
     public void save(){
-        PaymentMeanRepository repo = PersistenceFactory.buildPersistenceFactory().paymentMeanRepository();
+        PaymentMeanRepositoryImpl repo = PersistenceFactory.buildPersistenceFactory().paymentMeanRepository();
         repo.save(this);
     }
-    public static List<PaymentMean> loadAll){
-        PaymentMeanRepository repo = PersistenceFactory.buildPersistenceFactory().paymentMeanRepository();
+    public static List(<PaymentMean> loadAll){
+            PaymentMeanRepositoryImpl repo = PersistenceFactory.buildPersistenceFactory().paymentMeanRepository();
         return repo.all();
-    }
+    }*/
     
     abstract public String getDescription();
     public abstract String toXml();
